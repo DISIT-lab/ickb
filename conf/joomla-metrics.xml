@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY icr "http://www.cloudicaro.it/cloud_ontology/core#">
+	<!ENTITY app "http://www.cloudicaro.it/cloud_ontology/applications#">
+]>
+<rdf:RDF xmlns:app="http://www.cloudicaro.it/cloud_ontology/applications#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:icr="http://www.cloudicaro.it/cloud_ontology/core#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns#
+schema-icaro-kb-metricType.xsd">
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MachineLowLevelMetricType:Joomla_Site_Size">
+		<rdf:type rdf:resource="&icr;ServiceLowLevelMetricType"/>
+		<icr:hasMetricName>CMW Metrics Collector</icr:hasMetricName>
+		<icr:hasPerfData>tenant-folder-size</icr:hasPerfData>
+		<icr:hasDescription>Joomla site size</icr:hasDescription>
+		<icr:hasMetricUnit>kB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:Joomla_Site_LAST_Size">
+		<icr:hasMetricName>Joomla Site LAST Size</icr:hasMetricName>
+		<icr:hasDescription>Joomla site size</icr:hasDescription>
+		<icr:hasMetricUnit>kB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MachineLowLevelMetricType:Joomla_Site_Size"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:Joomla_Site_MAX_Size_1day">
+		<icr:hasMetricName>Joomla Site MAX Size 1day</icr:hasMetricName>
+		<icr:hasDescription>Joomla site size</icr:hasDescription>
+		<icr:hasMetricUnit>kB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MachineLowLevelMetricType:Joomla_Site_Size"/>
+				<icr:useOperator>max</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+				<icr:useTimeInterval rdf:parseType="Resource">
+					<icr:hasValue rdf:datatype="&xsd;decimal">1</icr:hasValue>
+					<icr:hasUnit>day</icr:hasUnit>
+				</icr:useTimeInterval>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>
+</rdf:RDF>

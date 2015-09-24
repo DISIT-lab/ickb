@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY icr "http://www.cloudicaro.it/cloud_ontology/core#" >
+]>
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:icr="http://www.cloudicaro.it/cloud_ontology/core#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Class rdf:about="http://www.cloudicaro.it/cloud_ontology/applications#Joomla">
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroMultiTenantApplication"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;ApacheWebServer"/>
+                                    <rdf:Description rdf:about="&icr;HttpBalancer"/>
+                                    <rdf:Description rdf:about="&icr;MySQL"/>
+                                    <rdf:Description rdf:about="&icr;StorageServer"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <onClass>
+                            <Class>
+                                <intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;ApacheWebServer"/>
+                                    <Restriction>
+                                        <onProperty rdf:resource="&icr;supportsLanguage"/>
+                                        <hasValue rdf:resource="&icr;php"/>
+                                    </Restriction>
+                                </intersectionOf>
+                            </Class>
+                        </onClass>
+                        <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <onClass rdf:resource="&icr;MySQL"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <onClass rdf:resource="&icr;NFSServer"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Class>
+    <Class rdf:about="http://www.cloudicaro.it/cloud_ontology/applications#JoomlaBalanced">
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cloudicaro.it/cloud_ontology/applications#Joomla"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <onClass>
+                            <Class>
+                                <intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;ApacheWebServer"/>
+                                    <Restriction>
+                                        <onProperty rdf:resource="&icr;supportsLanguage"/>
+                                        <hasValue rdf:resource="&icr;php"/>
+                                    </Restriction>
+                                </intersectionOf>
+                            </Class>
+                        </onClass>
+                        <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <onClass rdf:resource="&icr;HttpBalancer"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <onClass>
+                            <Class>
+                                <intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;ApacheWebServer"/>
+                                    <Restriction>
+                                        <onProperty rdf:resource="&icr;supportsLanguage"/>
+                                        <hasValue rdf:resource="&icr;php"/>
+                                    </Restriction>
+                                </intersectionOf>
+                            </Class>
+                        </onClass>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">3</maxQualifiedCardinality>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Class>
+</rdf:RDF>

@@ -1,0 +1,2094 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.cloudicaro.it/cloud_ontology/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.cloudicaro.it/cloud_ontology/core#">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="icr" IRI="http://www.cloudicaro.it/cloud_ontology/core#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="Administrator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ApacheTomcat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ApacheWebServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AxcpGridNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AxcpScheduler"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="BusinessConfiguration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="CPULowLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Creator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataCenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Developer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DevelopmentLanguage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DiskLowLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ExternalStorage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Firewall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FtpServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HAProxy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HighLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HostMachine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HostMachineCluster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="HttpBalancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Hypervisor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="IcaroApplication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="IcaroApplicationModule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="IcaroMultiTenantApplication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="IcaroService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="IcaroTenant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="InternetInformationServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="JBoss"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LinuxOS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LocalNetwork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LocalStorage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LowLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MSSQLServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MSSqlServer2012"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MachineHighLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MachineLowLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MailServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MemoryLowLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MonitorInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MySQL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MySQLCluster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NFSServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NetworkAdapter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NetworkLowLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OfficeWebAppServer2013"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OperativeSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OtherOS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PhysicalThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PostgresSQL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Router"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SambaServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceHighLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelAndMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelDerivedMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelObjective"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelOrMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLevelSimpleMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceLowLevelMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ServiceMetricType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SharePointServer2013"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SharedStorageVolume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SqlServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Storage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="StorageServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Subscriber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UnixOS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="VirtualMachine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="VirtualMachineTemplate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="VirtualNetwork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="VirtualStorage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="VirtualThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="WebApplicationServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="WebServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="WindowsDomainController"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="WindowsOS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="administeredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="boundToNetwork"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="createdBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="dependsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="developedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasLocalStorage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasMonitorInfo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasNetworkAdapter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasOS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSLA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSLAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSLMetric"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSLObjective"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasTenant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasVirtualStorage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isInstanceOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isStoredOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isTenantOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="needs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="runs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="runsOnVM"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="subscribedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="supportsLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="useSharedStorage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="useVM"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="uses"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="atTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="callUrl"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasArguments"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasAuthUserName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasAuthUserPassword"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCPUCount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCPUSpeed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCPUSpeedLimit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCPUSpeedReservation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCPUType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCapacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCheckInterval"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCheckMode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasContractId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasCriticalValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasDiskSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasEndTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasExternalIPAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasIPAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasIdentifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMaxCheckAttempts"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMemoryLimit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMemoryReservation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMemorySize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMetricName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMetricUnit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMetricValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMetricValueLessThan"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMetricValueMoreThan"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasModelName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMonitorIPAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasMonitorState"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasProcessName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasStartTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasSubNetworkMask"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasWarningValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="isInDomain"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="usesTcpPort"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="usesUdpPort"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="centos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="citrix_xenserver"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="csharp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ibm_as400"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="java"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="kvm"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="microsoft_hyperv"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="oracle_vm"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="os400"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="php"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="redHat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ruby"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ubuntu"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="vmware_esx"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="vmware_esxi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="windows7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="windowsServer2003"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="windowsServer2008"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="windowsServer2012"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="windowsServer2012R2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="windowsVista"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="windowsXP"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="hasName"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="BusinessConfiguration"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="administeredBy"/>
+                <Class IRI="Administrator"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="HostMachine"/>
+                    <Class IRI="IcaroApplication"/>
+                    <Class IRI="IcaroTenant"/>
+                    <Class IRI="VirtualMachine"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="createdBy"/>
+                <Class IRI="Creator"/>
+            </ObjectExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasContractId"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="DataCenter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="PhysicalThing"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <Class IRI="LocalNetwork"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="HostMachine"/>
+                    <Class IRI="HostMachineCluster"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="HostMachine"/>
+                    <Class IRI="HostMachineCluster"/>
+                    <Class IRI="LocalNetwork"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="DevelopmentLanguage"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="php"/>
+            <NamedIndividual IRI="ruby"/>
+            <NamedIndividual IRI="csharp"/>
+            <NamedIndividual IRI="java"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="ExternalStorage"/>
+        <ObjectIntersectionOf>
+            <Class IRI="Storage"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasNetworkAdapter"/>
+                <Class IRI="NetworkAdapter"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <Class IRI="SharedStorageVolume"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMonitorInfo"/>
+                <Class IRI="MonitorInfo"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasNetworkAdapter"/>
+                <Class IRI="NetworkAdapter"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <Class IRI="SharedStorageVolume"/>
+            </ObjectAllValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorIPAddress"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorState"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="HostMachine"/>
+        <ObjectIntersectionOf>
+            <Class IRI="PhysicalThing"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasLocalStorage"/>
+                <Class IRI="LocalStorage"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasNetworkAdapter"/>
+                <Class IRI="NetworkAdapter"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <Class IRI="VirtualMachineTemplate"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasLocalStorage"/>
+                <Class IRI="LocalStorage"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMonitorInfo"/>
+                <Class IRI="MonitorInfo"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasNetworkAdapter"/>
+                <Class IRI="NetworkAdapter"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <Class IRI="VirtualMachineTemplate"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="isPartOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="DataCenter"/>
+                    <Class IRI="HostMachineCluster"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasCPUCount"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasCPUSpeed"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasCPUType"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMemorySize"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasAuthUserName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasAuthUserPassword"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasCapacity"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorIPAddress"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorState"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="isInDomain"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="HostMachineCluster"/>
+        <ObjectIntersectionOf>
+            <Class IRI="VirtualThing"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="HostMachine"/>
+                    <Class IRI="VirtualMachine"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="HostMachine"/>
+                    <Class IRI="VirtualMachine"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="IcaroApplication"/>
+        <ObjectIntersectionOf>
+            <Class IRI="Software"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="developedBy"/>
+                <Class IRI="Developer"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="useVM"/>
+                <Class IRI="VirtualMachine"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="administeredBy"/>
+                <Class IRI="Administrator"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="createdBy"/>
+                <Class IRI="Creator"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="developedBy"/>
+                <Class IRI="Developer"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasSLA"/>
+                <Class IRI="ServiceLevelAgreement"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="needs"/>
+                <ObjectUnionOf>
+                    <Class IRI="IcaroApplication"/>
+                    <Class IRI="IcaroApplicationModule"/>
+                    <Class IRI="IcaroService"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="subscribedBy"/>
+                <Class IRI="Subscriber"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="useVM"/>
+                <Class IRI="VirtualMachine"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="createdBy"/>
+                <Class IRI="Creator"/>
+            </ObjectExactCardinality>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasSLA"/>
+                <Class IRI="ServiceLevelAgreement"/>
+            </ObjectMaxCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="IcaroMultiTenantApplication"/>
+        <ObjectIntersectionOf>
+            <Class IRI="IcaroApplication"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasTenant"/>
+                <Class IRI="IcaroTenant"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="IcaroService"/>
+        <ObjectIntersectionOf>
+            <Class IRI="Software"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="runsOnVM"/>
+                <Class IRI="VirtualMachine"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMonitorInfo"/>
+                <Class IRI="MonitorInfo"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="runsOnVM"/>
+                <Class IRI="VirtualMachine"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="IcaroTenant"/>
+        <ObjectIntersectionOf>
+            <Class IRI="Software"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="administeredBy"/>
+                <Class IRI="Administrator"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMonitorInfo"/>
+                <Class IRI="MonitorInfo"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="isTenantOf"/>
+                <Class IRI="IcaroApplication"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="createdBy"/>
+                <Class IRI="Creator"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="isTenantOf"/>
+                <Class IRI="IcaroApplication"/>
+            </ObjectExactCardinality>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="hasSLA"/>
+                <Class IRI="ServiceLevelAgreement"/>
+            </ObjectMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorState"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="LocalNetwork"/>
+        <ObjectIntersectionOf>
+            <Class IRI="PhysicalThing"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="ExternalStorage"/>
+                    <Class IRI="HostMachine"/>
+                    <Class IRI="Router"/>
+                    <Class IRI="VirtualMachine"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasIPAddress"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasSubNetworkMask"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="MonitorInfo"/>
+        <ObjectIntersectionOf>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMetricName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasArguments"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasCheckInterval"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasCheckMode"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasCriticalValue"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMaxCheckAttempts"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorState"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasWarningValue"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="NetworkAdapter"/>
+        <ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="boundToNetwork"/>
+                <Class IRI="LocalNetwork"/>
+            </ObjectExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIPAddress"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasType"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="Router"/>
+        <ObjectIntersectionOf>
+            <Class IRI="PhysicalThing"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMonitorInfo"/>
+                <Class IRI="MonitorInfo"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasNetworkAdapter"/>
+                <Class IRI="NetworkAdapter"/>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="hasNetworkAdapter"/>
+                <Class IRI="NetworkAdapter"/>
+            </ObjectMinCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasModelName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorIPAddress"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="ServiceLevelAction"/>
+        <ObjectIntersectionOf>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="callUrl"/>
+                <Datatype abbreviatedIRI="xsd:anyURI"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="ServiceLevelAgreement"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasSLObjective"/>
+                <Class IRI="ServiceLevelObjective"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasSLObjective"/>
+                <Class IRI="ServiceLevelObjective"/>
+            </ObjectAllValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasEndTime"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasStartTime"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="ServiceLevelDerivedMetric"/>
+        <ObjectIntersectionOf>
+            <Class IRI="ServiceLevelMetric"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="dependsOn"/>
+                <Class IRI="ServiceLevelMetric"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="dependsOn"/>
+                <Class IRI="ServiceLevelMetric"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="ServiceLevelObjective"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasSLAction"/>
+                <Class IRI="ServiceLevelAction"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasSLMetric"/>
+                <Class IRI="ServiceLevelMetric"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasSLAction"/>
+                <Class IRI="ServiceLevelAction"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasSLMetric"/>
+                <Class IRI="ServiceLevelMetric"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="ServiceLevelSimpleMetric"/>
+        <ObjectIntersectionOf>
+            <Class IRI="ServiceLevelMetric"/>
+            <ObjectUnionOf>
+                <DataExactCardinality cardinality="1">
+                    <DataProperty IRI="hasMetricValue"/>
+                    <Datatype abbreviatedIRI="xsd:decimal"/>
+                </DataExactCardinality>
+                <DataExactCardinality cardinality="1">
+                    <DataProperty IRI="hasMetricValueLessThan"/>
+                    <Datatype abbreviatedIRI="xsd:decimal"/>
+                </DataExactCardinality>
+                <DataExactCardinality cardinality="1">
+                    <DataProperty IRI="hasMetricValueMoreThan"/>
+                    <Datatype abbreviatedIRI="xsd:decimal"/>
+                </DataExactCardinality>
+            </ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="dependsOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="IcaroApplication"/>
+                    <Class IRI="IcaroService"/>
+                    <Class IRI="PhysicalThing"/>
+                    <Class IRI="VirtualMachine"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMetricName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMetricUnit"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="ServiceMetric"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="dependsOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="IcaroApplication"/>
+                    <Class IRI="IcaroService"/>
+                    <Class IRI="PhysicalThing"/>
+                    <Class IRI="VirtualMachine"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="dependsOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="IcaroApplication"/>
+                    <Class IRI="IcaroService"/>
+                    <Class IRI="PhysicalThing"/>
+                    <Class IRI="VirtualMachine"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="atTime"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMetricName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMetricUnit"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMetricValue"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="Storage"/>
+        <ObjectIntersectionOf>
+            <Class IRI="PhysicalThing"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasDiskSize"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="VirtualMachine"/>
+        <ObjectIntersectionOf>
+            <Class IRI="VirtualMachineTemplate"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasMonitorInfo"/>
+                <Class IRI="MonitorInfo"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="isPartOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="HostMachine"/>
+                    <Class IRI="LocalNetwork"/>
+                    <Class IRI="VirtualNetwork"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="isInstanceOf"/>
+                <Class IRI="VirtualMachineTemplate"/>
+            </ObjectMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasAuthUserName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasAuthUserPassword"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasExternalIPAddress"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMonitorState"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="isInDomain"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="VirtualMachineTemplate"/>
+        <ObjectIntersectionOf>
+            <Class IRI="VirtualThing"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="IcaroApplication"/>
+                    <Class IRI="IcaroService"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasNetworkAdapter"/>
+                <Class IRI="NetworkAdapter"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <ObjectUnionOf>
+                    <Class IRI="IcaroApplication"/>
+                    <Class IRI="IcaroService"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasVirtualStorage"/>
+                <Class IRI="VirtualStorage"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="isStoredOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="LocalStorage"/>
+                    <Class IRI="SharedStorageVolume"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="hasVirtualStorage"/>
+                <Class IRI="VirtualStorage"/>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="hasOS"/>
+                <Class IRI="OperativeSystem"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="isStoredOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="LocalStorage"/>
+                    <Class IRI="SharedStorageVolume"/>
+                </ObjectUnionOf>
+            </ObjectExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasCPUCount"/>
+                <Datatype abbreviatedIRI="xsd:int"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasMemorySize"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataExactCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasCPUSpeedLimit"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasCPUSpeedReservation"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMemoryLimit"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+            <DataMaxCardinality cardinality="1">
+                <DataProperty IRI="hasMemoryReservation"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="VirtualNetwork"/>
+        <ObjectIntersectionOf>
+            <Class IRI="VirtualThing"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="hasPart"/>
+                <Class IRI="VirtualMachine"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="VirtualStorage"/>
+        <ObjectIntersectionOf>
+            <Class IRI="VirtualThing"/>
+            <ObjectMaxCardinality cardinality="1">
+                <ObjectProperty IRI="isStoredOn"/>
+                <ObjectUnionOf>
+                    <Class IRI="LocalStorage"/>
+                    <Class IRI="SharedStorageVolume"/>
+                </ObjectUnionOf>
+            </ObjectMaxCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasDiskSize"/>
+                <Datatype abbreviatedIRI="xsd:decimal"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasIdentifier"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="hasName"/>
+                <Datatype abbreviatedIRI="xsd:string"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="Administrator"/>
+        <Class IRI="User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ApacheTomcat"/>
+        <Class IRI="WebApplicationServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ApacheWebServer"/>
+        <Class IRI="WebServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AxcpGridNode"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AxcpScheduler"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="CPULowLevelMetricType"/>
+        <Class IRI="MachineLowLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Creator"/>
+        <Class IRI="User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Developer"/>
+        <Class IRI="User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DevelopmentLanguage"/>
+        <Class IRI="Software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DiskLowLevelMetricType"/>
+        <Class IRI="MachineLowLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ExternalStorage"/>
+        <Class IRI="Storage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Firewall"/>
+        <Class IRI="Router"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FtpServer"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HAProxy"/>
+        <Class IRI="HttpBalancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HighLevelMetricType"/>
+        <Class IRI="ServiceMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="HttpBalancer"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Hypervisor"/>
+        <Class IRI="OperativeSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="IcaroApplicationModule"/>
+        <Class IRI="Software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="InternetInformationServer"/>
+        <Class IRI="WebServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="JBoss"/>
+        <Class IRI="WebApplicationServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LinuxOS"/>
+        <Class IRI="OperativeSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LocalStorage"/>
+        <Class IRI="Storage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LowLevelMetricType"/>
+        <Class IRI="ServiceMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MSSQLServer"/>
+        <Class IRI="SqlServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MSSqlServer2012"/>
+        <Class IRI="MSSQLServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MachineHighLevelMetricType"/>
+        <Class IRI="HighLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MachineLowLevelMetricType"/>
+        <Class IRI="LowLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MailServer"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MemoryLowLevelMetricType"/>
+        <Class IRI="MachineLowLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MySQL"/>
+        <Class IRI="SqlServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MySQLCluster"/>
+        <Class IRI="MySQL"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NFSServer"/>
+        <Class IRI="StorageServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NetworkLowLevelMetricType"/>
+        <Class IRI="MachineLowLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OfficeWebAppServer2013"/>
+        <Class IRI="WebApplicationServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OperativeSystem"/>
+        <Class IRI="Software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="OtherOS"/>
+        <Class IRI="OperativeSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="PostgresSQL"/>
+        <Class IRI="SqlServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Router"/>
+        <Class IRI="PhysicalThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SambaServer"/>
+        <Class IRI="StorageServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ServiceHighLevelMetricType"/>
+        <Class IRI="HighLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ServiceLevelAndMetric"/>
+        <Class IRI="ServiceLevelDerivedMetric"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ServiceLevelOrMetric"/>
+        <Class IRI="ServiceLevelDerivedMetric"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ServiceLowLevelMetricType"/>
+        <Class IRI="LowLevelMetricType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ServiceMetricType"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasMetricName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ServiceMetricType"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasMetricUnit"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SharePointServer2013"/>
+        <Class IRI="WebApplicationServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SharedStorageVolume"/>
+        <Class IRI="Storage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SqlServer"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="StorageServer"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Subscriber"/>
+        <Class IRI="User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="UnixOS"/>
+        <Class IRI="OperativeSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="WebApplicationServer"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="WebServer"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="WebServer"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="supportsLanguage"/>
+            <Class IRI="DevelopmentLanguage"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="WindowsDomainController"/>
+        <Class IRI="IcaroService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="WindowsOS"/>
+        <Class IRI="OperativeSystem"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="IcaroApplication"/>
+        <Class IRI="IcaroService"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="PhysicalThing"/>
+        <Class IRI="VirtualThing"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="IcaroService"/>
+        <Class IRI="AxcpGridNode"/>
+        <Class IRI="AxcpScheduler"/>
+        <Class IRI="FtpServer"/>
+        <Class IRI="HttpBalancer"/>
+        <Class IRI="MailServer"/>
+        <Class IRI="SqlServer"/>
+        <Class IRI="StorageServer"/>
+        <Class IRI="WebApplicationServer"/>
+        <Class IRI="WebServer"/>
+    </DisjointUnion>
+    <ClassAssertion>
+        <Class IRI="LinuxOS"/>
+        <NamedIndividual IRI="centos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Hypervisor"/>
+        <NamedIndividual IRI="citrix_xenserver"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DevelopmentLanguage"/>
+        <NamedIndividual IRI="csharp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Hypervisor"/>
+        <NamedIndividual IRI="ibm_as400"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DevelopmentLanguage"/>
+        <NamedIndividual IRI="java"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Hypervisor"/>
+        <NamedIndividual IRI="kvm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Hypervisor"/>
+        <NamedIndividual IRI="microsoft_hyperv"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Hypervisor"/>
+        <NamedIndividual IRI="oracle_vm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="OtherOS"/>
+        <NamedIndividual IRI="os400"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DevelopmentLanguage"/>
+        <NamedIndividual IRI="php"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LinuxOS"/>
+        <NamedIndividual IRI="redHat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DevelopmentLanguage"/>
+        <NamedIndividual IRI="ruby"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="LinuxOS"/>
+        <NamedIndividual IRI="ubuntu"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Hypervisor"/>
+        <NamedIndividual IRI="vmware_esx"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Hypervisor"/>
+        <NamedIndividual IRI="vmware_esxi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="WindowsOS"/>
+        <NamedIndividual IRI="windows7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="WindowsOS"/>
+        <NamedIndividual IRI="windowsServer2003"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="WindowsOS"/>
+        <NamedIndividual IRI="windowsServer2008"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="WindowsOS"/>
+        <NamedIndividual IRI="windowsServer2012"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="WindowsOS"/>
+        <NamedIndividual IRI="windowsServer2012R2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="WindowsOS"/>
+        <NamedIndividual IRI="windowsVista"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="WindowsOS"/>
+        <NamedIndividual IRI="windowsXP"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="windows7"/>
+        <NamedIndividual IRI="windowsServer2003"/>
+        <NamedIndividual IRI="windowsVista"/>
+        <NamedIndividual IRI="windowsXP"/>
+    </DifferentIndividuals>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="createdBy"/>
+        <ObjectProperty IRI="administeredBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasMonitorInfo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hasSLMetric"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="runsOnVM"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasPart"/>
+        <ObjectProperty IRI="isPartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="hasTenant"/>
+        <ObjectProperty IRI="isTenantOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="runs"/>
+        <ObjectProperty IRI="runsOnVM"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="hasOS"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="isTenantOf"/>
+    </FunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="uses"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="boundToNetwork"/>
+        <Class IRI="NetworkAdapter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasSLA"/>
+        <ObjectUnionOf>
+            <Class IRI="IcaroApplication"/>
+            <Class IRI="IcaroTenant"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasTenant"/>
+        <ObjectUnionOf>
+            <Class IRI="IcaroApplication"/>
+            <Class IRI="IcaroService"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isTenantOf"/>
+        <Class IRI="IcaroTenant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="needs"/>
+        <Class IRI="IcaroApplication"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="runs"/>
+        <Class IRI="VirtualMachine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="runsOnVM"/>
+        <Class IRI="IcaroService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="administeredBy"/>
+        <Class IRI="Administrator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="boundToNetwork"/>
+        <ObjectUnionOf>
+            <Class IRI="LocalNetwork"/>
+            <Class IRI="VirtualNetwork"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="createdBy"/>
+        <Class IRI="Creator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="developedBy"/>
+        <Class IRI="Developer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasLocalStorage"/>
+        <Class IRI="LocalStorage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasMonitorInfo"/>
+        <Class IRI="MonitorInfo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasNetworkAdapter"/>
+        <Class IRI="NetworkAdapter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasSLA"/>
+        <Class IRI="ServiceLevelAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasTenant"/>
+        <Class IRI="IcaroTenant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isStoredOn"/>
+        <Class IRI="Storage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isTenantOf"/>
+        <ObjectUnionOf>
+            <Class IRI="IcaroApplication"/>
+            <Class IRI="IcaroService"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="needs"/>
+        <ObjectUnionOf>
+            <Class IRI="IcaroApplication"/>
+            <Class IRI="IcaroService"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="runs"/>
+        <Class IRI="IcaroService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="runsOnVM"/>
+        <Class IRI="VirtualMachine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="subscribedBy"/>
+        <Class IRI="Subscriber"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="useSharedStorage"/>
+        <Class IRI="SharedStorageVolume"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="useVM"/>
+        <Class IRI="VirtualMachine"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="needs"/>
+            <ObjectProperty IRI="runsOnVM"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="useVM"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="hasCriticalValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="hasMetricName"/>
+        <DataProperty IRI="hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="hasMetricValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="hasProcessName"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="hasWarningValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="atTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="hasCPUCount"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="hasEndTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="hasMetricValue"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="hasMetricValueLessThan"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="hasMetricValueMoreThan"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="hasStartTime"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="callUrl"/>
+        <Class IRI="ServiceLevelAction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="hasCPUCount"/>
+        <ObjectUnionOf>
+            <Class IRI="HostMachine"/>
+            <Class IRI="VirtualMachineTemplate"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="hasCheckInterval"/>
+        <Class IRI="MonitorInfo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="hasDiskSize"/>
+        <ObjectUnionOf>
+            <Class IRI="Storage"/>
+            <Class IRI="VirtualStorage"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="hasIPAddress"/>
+        <Class IRI="NetworkAdapter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="hasMaxCheckAttempts"/>
+        <Class IRI="MonitorInfo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="hasMemorySize"/>
+        <ObjectUnionOf>
+            <Class IRI="HostMachine"/>
+            <Class IRI="VirtualMachineTemplate"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="usesTcpPort"/>
+        <ObjectUnionOf>
+            <Class IRI="IcaroApplication"/>
+            <Class IRI="IcaroService"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="usesUdpPort"/>
+        <ObjectUnionOf>
+            <Class IRI="IcaroApplication"/>
+            <Class IRI="IcaroService"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="atTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="callUrl"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasArguments"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasAuthUserName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasAuthUserPassword"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCPUCount"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCPUSpeed"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCPUSpeedLimit"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCPUSpeedReservation"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCPUType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCapacity"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCheckInterval"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasCheckMode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasContractId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasDiskSize"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasEndTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasExternalIPAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasIPAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasIdentifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMaxCheckAttempts"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMemoryLimit"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMemoryReservation"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMemorySize"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMetricName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMetricUnit"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMetricValue"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMetricValueLessThan"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMetricValueMoreThan"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasModelName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMonitorIPAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasMonitorState"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasProcessName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasStartTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasSubNetworkMask"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="hasWarningValue"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="isInDomain"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="usesTcpPort"/>
+        <Datatype abbreviatedIRI="xsd:unsignedShort"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="usesUdpPort"/>
+        <Datatype abbreviatedIRI="xsd:unsignedShort"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasCPUCount</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Number of CPU</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasDiskSize</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Disk size in GB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasMemorySize</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Size of RAM memory in GB</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="hasName"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+    </SubAnnotationPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

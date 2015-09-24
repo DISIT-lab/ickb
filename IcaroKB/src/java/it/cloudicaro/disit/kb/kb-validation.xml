@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Icaro Cloud Knowledge Base (ICKB).
+   Copyright (C) 2015 DISIT Lab http://www.disit.org - University of Florence
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation; either version 2
+   of the License, or (at your option) any later version.
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+<KbValidation>
+  <DataCenter>
+
+  </DataCenter>
+  <MetricType>
+    <query id="mt_onLowLevelMetricType" name="check onLowLevelMetricType" message="?x: ?y is not a LowLevelMetricType">
+      select ?x ?y where {
+        graph %g {
+          ?x icr:onLowLevelMetricType ?y.
+        }
+        filter not exists {
+          ?y a icr:LowLevelMetricType.
+        }
+      }
+    </query>
+    <query id="mt_onServiceType" name="check onServiceType" message="?x: ?y is not an IcaroService">
+      select ?x ?y where {
+        graph %g {
+          ?x icr:onServiceType ?y.
+        }
+        filter not exists {
+          ?y rdfs:subClassOf icr:IcaroService.
+        }
+      }
+    </query>
+    <query id="mt_hasMetricName" name="check hasMetricName" message="?x: ?y name already present for ?z">
+      select ?x ?y ?z where {
+        graph %g {
+          ?x icr:hasMetricName ?y.
+        }
+        ?x a icr:HighLevelMetricType.
+        ?z a icr:HighLevelMetricType;
+          icr:hasMetricName ?y.
+        filter(?z!=?x)
+      }
+    </query>
+  </MetricType>
+  <BusinessConfiguration>
+    <query id="bc_createdBy" name="check createdBy" message="?x: ?y is not an icr:User">
+      select ?x ?y where {
+        graph %g {
+          ?x icr:createdBy ?y.
+          filter not exists {
+            ?y a icr:User.
+          }
+        }
+      }
+    </query>
+    <query id="bc_administeredBy" name="check adminsteredBy" message="?x: ?y is not an icr:User">
+        select ?x ?y where {
+            graph %g {
+              ?x icr:administeredBy ?y.
+              filter not exists {
+                ?y a icr:User.
+              }
+        }
+      }
+    </query>
+    <query id="bc_IcaroApplication" name="check IcaroApplication type" message="?x: ?y is not a valid icr:IcaroApplication type">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:IcaroApplication.
+              ?x a ?y.
+              filter(?y!=icr:IcaroApplication)
+            }
+            filter not exists {
+              ?y rdfs:subClassOf ?c.
+              filter(isBlank(?c))
+            }
+          }
+    </query>
+    <query id="bc_IcaroService" name="check IcaroService type" message="?x: ?y is not an valid IcaroService type">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:IcaroService.
+              ?x a ?y.
+              filter(?y!=icr:IcaroService)
+            }
+            filter not exists {
+              ?y rdfs:subClassOf ?c.
+              filter(isBlank(?c))
+            }
+          }
+    </query>
+    <query id="bc_runsOnVM" name="check runsOnVM" message="?x: ?y is not a icr:VirtualMachine">
+          select ?x ?y where {
+            graph %g {
+              ?x icr:runsOnVM ?y.
+              filter not exists {
+                ?y a icr:VirtualMachine.
+              }
+            }
+          }
+    </query>
+    <query id="bc_supportsLanguage" name="check supportsLanguage" message="?x: ?y is not a icr:DevelopmentLanguage ">
+          select ?x ?y where {
+            graph %g {
+              ?x icr:supportsLanguage ?y.
+            }
+            filter not exists {
+              ?y a icr:DevelopmentLanguage.
+            }
+          }
+    </query>
+    <query id="bc_isTenantOf" name="check isTenantOf" message="?x: ?y is not a icr:IcaroMultiTenantApplication ">
+          select ?x ?y where {
+            graph %g {
+              ?x icr:isTenantOf ?y.
+            }
+            filter not exists {
+              ?y a icr:IcaroMultiTenantApplication.
+            }
+          }
+    </query>
+    <query id="bc_VMisPartOfHM" name="check VM isPartOf HM" message="?x: ?y is not a valid icr:HostMachine or icr:HostMachineCluster">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachine.
+              ?x icr:isPartOf ?y.
+            }
+            filter not exists {
+              { ?y a icr:HostMachine. } union { ?y a icr:HostMachineCluster. }
+            }
+          }
+    </query>
+    <query id="bc_VMTisPartOfHM" name="check VMT isPartOf HM" message="?x: ?y is not a valid icr:HostMachine">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachineTemplate.
+              ?x icr:isPartOf ?y.
+            }
+            filter not exists {
+              ?y a icr:HostMachine.
+            }
+          }
+    </query>
+    <query id="bc_BChasPart" name="check BC hasPart" message="?x: ?y is not a valid icr:IcaroApplication,icr:IcaroTenant,icr:VirtualMachine,icr:HostMachine">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:BusinessConfiguration.
+              ?x icr:hasPart ?y.
+            }
+            filter not exists {
+              { ?y a icr:IcaroApplication. } union { ?y a icr:IcaroTenant. } union 
+              { ?y a icr:VirtualMachine. } union { ?y a icr:HostMachine. }
+            }
+          }
+    </query>
+    <query id="bc_VM_NetworkAdapter" name="check VM NetworkAdapter" message="?x: ?y is not a valid icr:LocalNetwork">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachine.
+              ?x icr:hasNetworkAdapter ?n.
+              ?n icr:boundToNetwork ?y.
+            }
+            filter not exists {
+              ?y a icr:LocalNetwork.
+            }
+          }
+    </query>
+    <query id="bc_VMT_NetworkAdapter" name="check VMT NetworkAdapter" message="?x: ?y is not a valid icr:LocalNetwork">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachineTemplate.
+              ?x icr:hasNetworkAdapter ?n.
+              ?n icr:boundToNetwork ?y.
+            }
+            filter not exists {
+              ?y a icr:LocalNetwork.
+            }
+          }
+    </query>
+    <query id="bc_VMT_hasOS" name="check VMT hasOS" message="?x: ?y is not a valid icr:OperativeSystem">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachineTemplate.
+              ?x icr:hasOS ?y.
+            }
+            filter not exists {
+              ?y a icr:OperativeSystem.
+            }
+          }
+    </query>
+    <query id="bc_VM_hasOS" name="check VM hasOS" message="?x: ?y is not a valid icr:OperativeSystem">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachine.
+              ?x icr:hasOS ?y.
+            }
+            filter not exists {
+              ?y a icr:OperativeSystem.
+            }
+          }
+    </query>
+    <query id="bc_VM_isInstanceOf" name="check isInstanceOf" message="?x: ?y is not a valid icr:VirtualMachineTemplate">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachine.
+              ?x icr:isInstanceOf ?y.
+            }
+            filter not exists {
+              ?y a icr:VirtualMachineTemplate.
+            }
+          }
+    </query>
+    <query id="bc_VM_isStoredOn" name="check VM isStoredOn" message="?x: ?y is not a valid icr:LocalStorage">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:VirtualMachine.
+              ?x icr:isStoredOn ?y.
+            }
+            filter not exists {
+              { ?y a icr:LocalStorage. } union { ?y a icr:SharedStorageVolume. }
+            }
+          }
+    </query>
+    <query id="bc_SLA" name="check ServiceLevelSimpleMetric dependsOn" message="?x: ?y is not a valid icr:IcaroService or icr:IcaroApplication or icr:IcaroTenant or icr:VirtualMachine or icr:HostMachine or icr:BusinessConfiguration in this configuration">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:ServiceLevelSimpleMetric.
+              ?x icr:dependsOn ?y.
+            }
+            filter not exists {
+              { graph %g {
+                  { ?y a icr:IcaroService. } union { ?y a icr:IcaroApplication. } union { ?y a icr:IcaroTenant. } union { ?y a icr:VirtualMachine. } union { ?y a icr:BusinessConfiguration. }
+                } } union { graph %g { 
+                    ?bc a icr:BusinessConfiguration;
+                    icr:hasPart ?y. }
+                    ?y a icr:HostMachine.
+              }
+            }
+          }
+    </query>
+    <query id="bc_needs_minCard" name="check IcaroApplication needs minCardinality" message="Application ?x (?y) does not 'needs' min ?n of ?t (has ?c)">
+          select distinct ?x ?y ?t ?n ?c where {
+            graph %g {
+              ?x a icr:IcaroApplication.
+              ?x a ?y.
+              filter(?y!=icr:IcaroApplication)
+            }
+            ?y rdfs:subClassOf [ owl:intersectionOf ?xx ].
+            ?xx rdf:rest* ?yy.
+            ?yy rdf:first ?f.
+            ?f a owl:Restriction.
+            ?f owl:onProperty icr:needs.
+            ?f owl:minQualifiedCardinality ?n.
+            ?f owl:onClass ?t.
+            {
+              select ?x ?t (count(*) as ?c) where {
+                graph %g {
+                  ?x icr:needs ?s.
+                }
+                ?s a ?t.
+              } group by ?x ?t
+            }
+
+            filter(?c&lt;?n)
+          }
+    </query>
+    <query id="bc_needs_eqCard" name="check IcaroApplication needs cardinality" message="Application ?x (?y) does not 'needs' exactly ?n of ?t (has ?c)">
+          select distinct ?x ?y ?t ?n ?c where {
+            graph %g {
+              ?x a icr:IcaroApplication.
+              ?x a ?y.
+              filter(?y!=icr:IcaroApplication)
+            }        
+            ?y rdfs:subClassOf [ owl:intersectionOf ?xx ].
+            ?xx rdf:rest* ?yy.
+            ?yy rdf:first ?f.
+            ?f a owl:Restriction.
+            ?f owl:onProperty icr:needs.
+            ?f owl:qualifiedCardinality ?n.
+            ?f owl:onClass ?t.
+            {
+              select ?x ?t (count(*) as ?c) where {
+                graph %g {
+                  ?x icr:needs ?s.
+                }
+                ?s a ?t.
+              } group by ?x ?t
+            }
+        
+            filter(?n!=?c)
+          }
+    </query>
+    <query id="bc_needs_maxCard" name="check IcaroApplication needs maxCardinality" message="Application ?x (?y) 'needs' max ?n of ?t (has ?c)">
+          select distinct ?x ?y ?t ?n ?c where {
+            graph %g {
+              ?x a icr:IcaroApplication.
+              ?x a ?y.
+              filter(?y!=icr:IcaroApplication)
+            }
+            ?y rdfs:subClassOf [ owl:intersectionOf ?xx ].
+            ?xx rdf:rest* ?yy.
+            ?yy rdf:first ?f.
+            ?f a owl:Restriction.
+            ?f owl:onProperty icr:needs.
+            ?f owl:maxQualifiedCardinality ?n.
+            ?f owl:onClass ?t.
+            {
+              select ?x ?t (count(*) as ?c) where {
+                graph %g {
+                  ?x icr:needs ?s.
+                }
+                ?s a ?t.
+              } group by ?x ?t
+            }                
+
+            filter(?c&gt;?n)
+          }
+    </query>
+    <query id="bc_needs_someValuesFrom" name="check IcaroApplication needs someValuesFrom" message="Application ?x (?y) does not 'needs' min 1 of ?t (has ?c)">
+          select distinct ?x ?y ?t ?c where {
+            graph %g {
+              ?x a icr:IcaroApplication.
+              ?x a ?y.
+              filter(?y!=icr:IcaroApplication)
+            }
+            ?y rdfs:subClassOf [ owl:intersectionOf ?xx ].
+            ?xx rdf:rest* ?yy.
+            ?yy rdf:first ?f.
+            ?f a owl:Restriction.
+            ?f owl:onProperty icr:needs.
+            ?f owl:someValuesFrom ?t.
+            optional {
+              select ?x ?t (count(*) as ?c) where {
+                graph %g {
+                  ?x icr:needs ?s.
+                }
+                ?s a ?t.
+              } group by ?x ?t
+            }
+        
+            filter(?c&lt;1)
+          }
+    </query>
+    <query id="bc_ServiceLevelSimpleMetric_hasMetricName" name="check ServiceLevelSimpleMetric hasMetricName" message="ServiceLevelSimpleMetric ?x: ?y is not a name of a high level metric">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:ServiceLevelSimpleMetric;
+                icr:hasMetricName ?y.
+            }
+            filter not exists {
+              ?z a icr:HighLevelMetricType;
+                icr:hasMetricName ?y.
+            }
+          }
+    </query>
+    <query id="bc_MonitorInfo_hasMetricName" name="check MonitorInfo hasMetricName" message="MonitorInfo ?x: ?y is not a name of a low level metric">
+          select ?x ?y where {
+            graph %g {
+              ?x a icr:MonitorInfo;
+                icr:hasMetricName ?y.
+            }
+            filter not exists {
+              ?z a icr:LowLevelMetricType;
+                icr:hasMetricName ?y.
+            }
+          }
+    </query>
+  </BusinessConfiguration>
+</KbValidation>

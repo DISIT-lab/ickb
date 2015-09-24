@@ -1,0 +1,2535 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY icr "http://www.cloudicaro.it/cloud_ontology/core#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:icr="http://www.cloudicaro.it/cloud_ontology/core#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Ontology rdf:about="http://www.cloudicaro.it/cloud_ontology/core#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasName -->
+
+    <AnnotationProperty rdf:about="&icr;hasName">
+        <rdfs:subPropertyOf rdf:resource="&rdfs;label"/>
+    </AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#administeredBy -->
+
+    <ObjectProperty rdf:about="&icr;administeredBy">
+        <rdfs:range rdf:resource="&icr;Administrator"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#boundToNetwork -->
+
+    <ObjectProperty rdf:about="&icr;boundToNetwork">
+        <rdfs:domain rdf:resource="&icr;NetworkAdapter"/>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;LocalNetwork"/>
+                    <rdf:Description rdf:about="&icr;VirtualNetwork"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#createdBy -->
+
+    <ObjectProperty rdf:about="&icr;createdBy">
+        <rdfs:range rdf:resource="&icr;Creator"/>
+        <rdfs:subPropertyOf rdf:resource="&icr;administeredBy"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#dependsOn -->
+
+    <ObjectProperty rdf:about="&icr;dependsOn"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#developedBy -->
+
+    <ObjectProperty rdf:about="&icr;developedBy">
+        <rdfs:range rdf:resource="&icr;Developer"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasLocalStorage -->
+
+    <ObjectProperty rdf:about="&icr;hasLocalStorage">
+        <rdfs:range rdf:resource="&icr;LocalStorage"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMonitorInfo -->
+
+    <ObjectProperty rdf:about="&icr;hasMonitorInfo">
+        <rdfs:range rdf:resource="&icr;MonitorInfo"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasNetworkAdapter -->
+
+    <ObjectProperty rdf:about="&icr;hasNetworkAdapter">
+        <rdfs:range rdf:resource="&icr;NetworkAdapter"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasOS -->
+
+    <ObjectProperty rdf:about="&icr;hasOS">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasPart -->
+
+    <ObjectProperty rdf:about="&icr;hasPart">
+        <inverseOf rdf:resource="&icr;isPartOf"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasSLA -->
+
+    <ObjectProperty rdf:about="&icr;hasSLA">
+        <rdfs:range rdf:resource="&icr;ServiceLevelAgreement"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                    <rdf:Description rdf:about="&icr;IcaroTenant"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasSLAction -->
+
+    <ObjectProperty rdf:about="&icr;hasSLAction"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasSLMetric -->
+
+    <ObjectProperty rdf:about="&icr;hasSLMetric">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasSLObjective -->
+
+    <ObjectProperty rdf:about="&icr;hasSLObjective"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasTenant -->
+
+    <ObjectProperty rdf:about="&icr;hasTenant">
+        <rdfs:range rdf:resource="&icr;IcaroTenant"/>
+        <inverseOf rdf:resource="&icr;isTenantOf"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasVirtualStorage -->
+
+    <ObjectProperty rdf:about="&icr;hasVirtualStorage"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#isInstanceOf -->
+
+    <ObjectProperty rdf:about="&icr;isInstanceOf"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#isPartOf -->
+
+    <ObjectProperty rdf:about="&icr;isPartOf"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#isStoredOn -->
+
+    <ObjectProperty rdf:about="&icr;isStoredOn">
+        <rdfs:range rdf:resource="&icr;Storage"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#isTenantOf -->
+
+    <ObjectProperty rdf:about="&icr;isTenantOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&icr;IcaroTenant"/>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#needs -->
+
+    <ObjectProperty rdf:about="&icr;needs">
+        <rdfs:domain rdf:resource="&icr;IcaroApplication"/>
+        <rdfs:range>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                </unionOf>
+            </Class>
+        </rdfs:range>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#runs -->
+
+    <ObjectProperty rdf:about="&icr;runs">
+        <rdfs:range rdf:resource="&icr;IcaroService"/>
+        <rdfs:domain rdf:resource="&icr;VirtualMachine"/>
+        <inverseOf rdf:resource="&icr;runsOnVM"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#runsOnVM -->
+
+    <ObjectProperty rdf:about="&icr;runsOnVM">
+        <rdfs:domain rdf:resource="&icr;IcaroService"/>
+        <rdfs:range rdf:resource="&icr;VirtualMachine"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#subscribedBy -->
+
+    <ObjectProperty rdf:about="&icr;subscribedBy">
+        <rdfs:range rdf:resource="&icr;Subscriber"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#supportsLanguage -->
+
+    <ObjectProperty rdf:about="&icr;supportsLanguage"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#useSharedStorage -->
+
+    <ObjectProperty rdf:about="&icr;useSharedStorage">
+        <rdfs:range rdf:resource="&icr;SharedStorageVolume"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#useVM -->
+
+    <ObjectProperty rdf:about="&icr;useVM">
+        <rdfs:range rdf:resource="&icr;VirtualMachine"/>
+        <propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&icr;needs"/>
+            <rdf:Description rdf:about="&icr;runsOnVM"/>
+        </propertyChainAxiom>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#uses -->
+
+    <ObjectProperty rdf:about="&icr;uses">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#atTime -->
+
+    <DatatypeProperty rdf:about="&icr;atTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#callUrl -->
+
+    <DatatypeProperty rdf:about="&icr;callUrl">
+        <rdfs:domain rdf:resource="&icr;ServiceLevelAction"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasArguments -->
+
+    <DatatypeProperty rdf:about="&icr;hasArguments">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasAuthUserName -->
+
+    <DatatypeProperty rdf:about="&icr;hasAuthUserName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasAuthUserPassword -->
+
+    <DatatypeProperty rdf:about="&icr;hasAuthUserPassword">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCPUCount -->
+
+    <DatatypeProperty rdf:about="&icr;hasCPUCount">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>Number of CPU</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                    <rdf:Description rdf:about="&icr;VirtualMachineTemplate"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCPUSpeed -->
+
+    <DatatypeProperty rdf:about="&icr;hasCPUSpeed">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCPUSpeedLimit -->
+
+    <DatatypeProperty rdf:about="&icr;hasCPUSpeedLimit">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCPUSpeedReservation -->
+
+    <DatatypeProperty rdf:about="&icr;hasCPUSpeedReservation">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCPUType -->
+
+    <DatatypeProperty rdf:about="&icr;hasCPUType">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCapacity -->
+
+    <DatatypeProperty rdf:about="&icr;hasCapacity">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCheckInterval -->
+
+    <DatatypeProperty rdf:about="&icr;hasCheckInterval">
+        <rdfs:domain rdf:resource="&icr;MonitorInfo"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCheckMode -->
+
+    <DatatypeProperty rdf:about="&icr;hasCheckMode">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasContractId -->
+
+    <DatatypeProperty rdf:about="&icr;hasContractId">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasCriticalValue -->
+
+    <DatatypeProperty rdf:about="&icr;hasCriticalValue">
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasDiskSize -->
+
+    <DatatypeProperty rdf:about="&icr;hasDiskSize">
+        <rdfs:comment xml:lang="en">Disk size in GB</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;Storage"/>
+                    <rdf:Description rdf:about="&icr;VirtualStorage"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasEndTime -->
+
+    <DatatypeProperty rdf:about="&icr;hasEndTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasExternalIPAddress -->
+
+    <DatatypeProperty rdf:about="&icr;hasExternalIPAddress">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasIPAddress -->
+
+    <DatatypeProperty rdf:about="&icr;hasIPAddress">
+        <rdfs:domain rdf:resource="&icr;NetworkAdapter"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasIdentifier -->
+
+    <DatatypeProperty rdf:about="&icr;hasIdentifier">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMaxCheckAttempts -->
+
+    <DatatypeProperty rdf:about="&icr;hasMaxCheckAttempts">
+        <rdfs:domain rdf:resource="&icr;MonitorInfo"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMemoryLimit -->
+
+    <DatatypeProperty rdf:about="&icr;hasMemoryLimit">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMemoryReservation -->
+
+    <DatatypeProperty rdf:about="&icr;hasMemoryReservation">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMemorySize -->
+
+    <DatatypeProperty rdf:about="&icr;hasMemorySize">
+        <rdfs:comment xml:lang="en">Size of RAM memory in GB</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                    <rdf:Description rdf:about="&icr;VirtualMachineTemplate"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMetricName -->
+
+    <DatatypeProperty rdf:about="&icr;hasMetricName">
+        <rdfs:subPropertyOf rdf:resource="&icr;hasName"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMetricUnit -->
+
+    <DatatypeProperty rdf:about="&icr;hasMetricUnit">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMetricValue -->
+
+    <DatatypeProperty rdf:about="&icr;hasMetricValue">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMetricValueLessThan -->
+
+    <DatatypeProperty rdf:about="&icr;hasMetricValueLessThan">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMetricValueMoreThan -->
+
+    <DatatypeProperty rdf:about="&icr;hasMetricValueMoreThan">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasModelName -->
+
+    <DatatypeProperty rdf:about="&icr;hasModelName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMonitorIPAddress -->
+
+    <DatatypeProperty rdf:about="&icr;hasMonitorIPAddress">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasMonitorState -->
+
+    <DatatypeProperty rdf:about="&icr;hasMonitorState">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasName -->
+
+    <DatatypeProperty rdf:about="&icr;hasName"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasProcessName -->
+
+    <DatatypeProperty rdf:about="&icr;hasProcessName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasStartTime -->
+
+    <DatatypeProperty rdf:about="&icr;hasStartTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasSubNetworkMask -->
+
+    <DatatypeProperty rdf:about="&icr;hasSubNetworkMask">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasType -->
+
+    <DatatypeProperty rdf:about="&icr;hasType">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#hasWarningValue -->
+
+    <DatatypeProperty rdf:about="&icr;hasWarningValue">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#isInDomain -->
+
+    <DatatypeProperty rdf:about="&icr;isInDomain">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#usesTcpPort -->
+
+    <DatatypeProperty rdf:about="&icr;usesTcpPort">
+        <rdfs:range rdf:resource="&xsd;unsignedShort"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#usesUdpPort -->
+
+    <DatatypeProperty rdf:about="&icr;usesUdpPort">
+        <rdfs:range rdf:resource="&xsd;unsignedShort"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Administrator -->
+
+    <Class rdf:about="&icr;Administrator">
+        <rdfs:subClassOf rdf:resource="&icr;User"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ApacheTomcat -->
+
+    <Class rdf:about="&icr;ApacheTomcat">
+        <rdfs:subClassOf rdf:resource="&icr;WebApplicationServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ApacheWebServer -->
+
+    <Class rdf:about="&icr;ApacheWebServer">
+        <rdfs:subClassOf rdf:resource="&icr;WebServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#AxcpGridNode -->
+
+    <Class rdf:about="&icr;AxcpGridNode">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#AxcpScheduler -->
+
+    <Class rdf:about="&icr;AxcpScheduler">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#BusinessConfiguration -->
+
+    <Class rdf:about="&icr;BusinessConfiguration">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;administeredBy"/>
+                        <allValuesFrom rdf:resource="&icr;Administrator"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                                    <rdf:Description rdf:about="&icr;IcaroTenant"/>
+                                    <rdf:Description rdf:about="&icr;VirtualMachine"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;createdBy"/>
+                        <onClass rdf:resource="&icr;Creator"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasContractId"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#CPULowLevelMetricType -->
+
+    <Class rdf:about="&icr;CPULowLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;MachineLowLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Creator -->
+
+    <Class rdf:about="&icr;Creator">
+        <rdfs:subClassOf rdf:resource="&icr;User"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#DataCenter -->
+
+    <Class rdf:about="&icr;DataCenter">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <someValuesFrom rdf:resource="&icr;LocalNetwork"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <someValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                                    <rdf:Description rdf:about="&icr;HostMachineCluster"/>
+                                </unionOf>
+                            </Class>
+                        </someValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                                    <rdf:Description rdf:about="&icr;HostMachineCluster"/>
+                                    <rdf:Description rdf:about="&icr;LocalNetwork"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Developer -->
+
+    <Class rdf:about="&icr;Developer">
+        <rdfs:subClassOf rdf:resource="&icr;User"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#DevelopmentLanguage -->
+
+    <Class rdf:about="&icr;DevelopmentLanguage">
+        <equivalentClass>
+            <Class>
+                <oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;php"/>
+                    <rdf:Description rdf:about="&icr;ruby"/>
+                    <rdf:Description rdf:about="&icr;csharp"/>
+                    <rdf:Description rdf:about="&icr;java"/>
+                </oneOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&icr;Software"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#DiskLowLevelMetricType -->
+
+    <Class rdf:about="&icr;DiskLowLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;MachineLowLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ExternalStorage -->
+
+    <Class rdf:about="&icr;ExternalStorage">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;Storage"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasNetworkAdapter"/>
+                        <someValuesFrom rdf:resource="&icr;NetworkAdapter"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <someValuesFrom rdf:resource="&icr;SharedStorageVolume"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorInfo"/>
+                        <allValuesFrom rdf:resource="&icr;MonitorInfo"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasNetworkAdapter"/>
+                        <allValuesFrom rdf:resource="&icr;NetworkAdapter"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom rdf:resource="&icr;SharedStorageVolume"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorIPAddress"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorState"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&icr;Storage"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Firewall -->
+
+    <Class rdf:about="&icr;Firewall">
+        <rdfs:subClassOf rdf:resource="&icr;Router"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#FtpServer -->
+
+    <Class rdf:about="&icr;FtpServer">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#HAProxy -->
+
+    <Class rdf:about="&icr;HAProxy">
+        <rdfs:subClassOf rdf:resource="&icr;HttpBalancer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#HighLevelMetricType -->
+
+    <Class rdf:about="&icr;HighLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;ServiceMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#HostMachine -->
+
+    <Class rdf:about="&icr;HostMachine">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasLocalStorage"/>
+                        <someValuesFrom rdf:resource="&icr;LocalStorage"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasNetworkAdapter"/>
+                        <someValuesFrom rdf:resource="&icr;NetworkAdapter"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <someValuesFrom rdf:resource="&icr;VirtualMachineTemplate"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasLocalStorage"/>
+                        <allValuesFrom rdf:resource="&icr;LocalStorage"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorInfo"/>
+                        <allValuesFrom rdf:resource="&icr;MonitorInfo"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasNetworkAdapter"/>
+                        <allValuesFrom rdf:resource="&icr;NetworkAdapter"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom rdf:resource="&icr;VirtualMachineTemplate"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isPartOf"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;DataCenter"/>
+                                    <rdf:Description rdf:about="&icr;HostMachineCluster"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCPUCount"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;positiveInteger"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCPUSpeed"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCPUType"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMemorySize"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasAuthUserName"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasAuthUserPassword"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCapacity"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorIPAddress"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorState"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isInDomain"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#HostMachineCluster -->
+
+    <Class rdf:about="&icr;HostMachineCluster">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;VirtualThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <someValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                                    <rdf:Description rdf:about="&icr;VirtualMachine"/>
+                                </unionOf>
+                            </Class>
+                        </someValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                                    <rdf:Description rdf:about="&icr;VirtualMachine"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#HttpBalancer -->
+
+    <Class rdf:about="&icr;HttpBalancer">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Hypervisor -->
+
+    <Class rdf:about="&icr;Hypervisor">
+        <rdfs:subClassOf rdf:resource="&icr;OperativeSystem"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#IcaroApplication -->
+
+    <Class rdf:about="&icr;IcaroApplication">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;Software"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;developedBy"/>
+                        <someValuesFrom rdf:resource="&icr;Developer"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;useVM"/>
+                        <someValuesFrom rdf:resource="&icr;VirtualMachine"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;administeredBy"/>
+                        <allValuesFrom rdf:resource="&icr;Administrator"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;createdBy"/>
+                        <allValuesFrom rdf:resource="&icr;Creator"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;developedBy"/>
+                        <allValuesFrom rdf:resource="&icr;Developer"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLA"/>
+                        <allValuesFrom rdf:resource="&icr;ServiceLevelAgreement"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;needs"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                                    <rdf:Description rdf:about="&icr;IcaroApplicationModule"/>
+                                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;subscribedBy"/>
+                        <allValuesFrom rdf:resource="&icr;Subscriber"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;useVM"/>
+                        <allValuesFrom rdf:resource="&icr;VirtualMachine"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;createdBy"/>
+                        <onClass rdf:resource="&icr;Creator"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLA"/>
+                        <onClass rdf:resource="&icr;ServiceLevelAgreement"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <disjointWith rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#IcaroApplicationModule -->
+
+    <Class rdf:about="&icr;IcaroApplicationModule">
+        <rdfs:subClassOf rdf:resource="&icr;Software"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#IcaroMultiTenantApplication -->
+
+    <Class rdf:about="&icr;IcaroMultiTenantApplication">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasTenant"/>
+                        <allValuesFrom rdf:resource="&icr;IcaroTenant"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#IcaroService -->
+
+    <Class rdf:about="&icr;IcaroService">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;Software"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;runsOnVM"/>
+                        <someValuesFrom rdf:resource="&icr;VirtualMachine"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorInfo"/>
+                        <allValuesFrom rdf:resource="&icr;MonitorInfo"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;runsOnVM"/>
+                        <allValuesFrom rdf:resource="&icr;VirtualMachine"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&icr;AxcpGridNode"/>
+            <rdf:Description rdf:about="&icr;AxcpScheduler"/>
+            <rdf:Description rdf:about="&icr;FtpServer"/>
+            <rdf:Description rdf:about="&icr;HttpBalancer"/>
+            <rdf:Description rdf:about="&icr;MailServer"/>
+            <rdf:Description rdf:about="&icr;SqlServer"/>
+            <rdf:Description rdf:about="&icr;StorageServer"/>
+            <rdf:Description rdf:about="&icr;WebApplicationServer"/>
+            <rdf:Description rdf:about="&icr;WebServer"/>
+        </disjointUnionOf>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#IcaroTenant -->
+
+    <Class rdf:about="&icr;IcaroTenant">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;Software"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;administeredBy"/>
+                        <allValuesFrom rdf:resource="&icr;Administrator"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorInfo"/>
+                        <allValuesFrom rdf:resource="&icr;MonitorInfo"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isTenantOf"/>
+                        <allValuesFrom rdf:resource="&icr;IcaroApplication"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;createdBy"/>
+                        <onClass rdf:resource="&icr;Creator"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isTenantOf"/>
+                        <onClass rdf:resource="&icr;IcaroApplication"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLA"/>
+                        <onClass rdf:resource="&icr;ServiceLevelAgreement"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorState"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#InternetInformationServer -->
+
+    <Class rdf:about="&icr;InternetInformationServer">
+        <rdfs:subClassOf rdf:resource="&icr;WebServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#JBoss -->
+
+    <Class rdf:about="&icr;JBoss">
+        <rdfs:subClassOf rdf:resource="&icr;WebApplicationServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#LinuxOS -->
+
+    <Class rdf:about="&icr;LinuxOS">
+        <rdfs:subClassOf rdf:resource="&icr;OperativeSystem"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#LocalNetwork -->
+
+    <Class rdf:about="&icr;LocalNetwork">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;ExternalStorage"/>
+                                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                                    <rdf:Description rdf:about="&icr;Router"/>
+                                    <rdf:Description rdf:about="&icr;VirtualMachine"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIPAddress"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSubNetworkMask"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#LocalStorage -->
+
+    <Class rdf:about="&icr;LocalStorage">
+        <rdfs:subClassOf rdf:resource="&icr;Storage"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#LowLevelMetricType -->
+
+    <Class rdf:about="&icr;LowLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;ServiceMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MSSQLServer -->
+
+    <Class rdf:about="&icr;MSSQLServer">
+        <rdfs:subClassOf rdf:resource="&icr;SqlServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MSSqlServer2012 -->
+
+    <Class rdf:about="&icr;MSSqlServer2012">
+        <rdfs:subClassOf rdf:resource="&icr;MSSQLServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MachineHighLevelMetricType -->
+
+    <Class rdf:about="&icr;MachineHighLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;HighLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MachineLowLevelMetricType -->
+
+    <Class rdf:about="&icr;MachineLowLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;LowLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MailServer -->
+
+    <Class rdf:about="&icr;MailServer">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MemoryLowLevelMetricType -->
+
+    <Class rdf:about="&icr;MemoryLowLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;MachineLowLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MonitorInfo -->
+
+    <Class rdf:about="&icr;MonitorInfo">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMetricName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasArguments"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCheckInterval"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCheckMode"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCriticalValue"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMaxCheckAttempts"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;positiveInteger"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorState"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasWarningValue"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MySQL -->
+
+    <Class rdf:about="&icr;MySQL">
+        <rdfs:subClassOf rdf:resource="&icr;SqlServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#MySQLCluster -->
+
+    <Class rdf:about="&icr;MySQLCluster">
+        <rdfs:subClassOf rdf:resource="&icr;MySQL"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#NFSServer -->
+
+    <Class rdf:about="&icr;NFSServer">
+        <rdfs:subClassOf rdf:resource="&icr;StorageServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#NetworkAdapter -->
+
+    <Class rdf:about="&icr;NetworkAdapter">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;boundToNetwork"/>
+                        <onClass rdf:resource="&icr;LocalNetwork"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIPAddress"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasType"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#NetworkLowLevelMetricType -->
+
+    <Class rdf:about="&icr;NetworkLowLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;MachineLowLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#OfficeWebAppServer2013 -->
+
+    <Class rdf:about="&icr;OfficeWebAppServer2013">
+        <rdfs:subClassOf rdf:resource="&icr;WebApplicationServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#OperativeSystem -->
+
+    <Class rdf:about="&icr;OperativeSystem">
+        <rdfs:subClassOf rdf:resource="&icr;Software"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#OtherOS -->
+
+    <Class rdf:about="&icr;OtherOS">
+        <rdfs:subClassOf rdf:resource="&icr;OperativeSystem"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#PhysicalThing -->
+
+    <Class rdf:about="&icr;PhysicalThing">
+        <disjointWith rdf:resource="&icr;VirtualThing"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#PostgresSQL -->
+
+    <Class rdf:about="&icr;PostgresSQL">
+        <rdfs:subClassOf rdf:resource="&icr;SqlServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Router -->
+
+    <Class rdf:about="&icr;Router">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorInfo"/>
+                        <allValuesFrom rdf:resource="&icr;MonitorInfo"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasNetworkAdapter"/>
+                        <allValuesFrom rdf:resource="&icr;NetworkAdapter"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasNetworkAdapter"/>
+                        <onClass rdf:resource="&icr;NetworkAdapter"/>
+                        <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</minQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasModelName"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorIPAddress"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="&icr;PhysicalThing"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#SambaServer -->
+
+    <Class rdf:about="&icr;SambaServer">
+        <rdfs:subClassOf rdf:resource="&icr;StorageServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceHighLevelMetricType -->
+
+    <Class rdf:about="&icr;ServiceHighLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;HighLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelAction -->
+
+    <Class rdf:about="&icr;ServiceLevelAction">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;callUrl"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;anyURI"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelAgreement -->
+
+    <Class rdf:about="&icr;ServiceLevelAgreement">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLObjective"/>
+                        <someValuesFrom rdf:resource="&icr;ServiceLevelObjective"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLObjective"/>
+                        <allValuesFrom rdf:resource="&icr;ServiceLevelObjective"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasEndTime"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;dateTime"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasStartTime"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;dateTime"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelAndMetric -->
+
+    <Class rdf:about="&icr;ServiceLevelAndMetric">
+        <rdfs:subClassOf rdf:resource="&icr;ServiceLevelDerivedMetric"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelDerivedMetric -->
+
+    <Class rdf:about="&icr;ServiceLevelDerivedMetric">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;ServiceLevelMetric"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;dependsOn"/>
+                        <someValuesFrom rdf:resource="&icr;ServiceLevelMetric"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;dependsOn"/>
+                        <allValuesFrom rdf:resource="&icr;ServiceLevelMetric"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelMetric -->
+
+    <Class rdf:about="&icr;ServiceLevelMetric"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelObjective -->
+
+    <Class rdf:about="&icr;ServiceLevelObjective">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLAction"/>
+                        <someValuesFrom rdf:resource="&icr;ServiceLevelAction"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLMetric"/>
+                        <someValuesFrom rdf:resource="&icr;ServiceLevelMetric"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLAction"/>
+                        <allValuesFrom rdf:resource="&icr;ServiceLevelAction"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasSLMetric"/>
+                        <allValuesFrom rdf:resource="&icr;ServiceLevelMetric"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelOrMetric -->
+
+    <Class rdf:about="&icr;ServiceLevelOrMetric">
+        <rdfs:subClassOf rdf:resource="&icr;ServiceLevelDerivedMetric"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLevelSimpleMetric -->
+
+    <Class rdf:about="&icr;ServiceLevelSimpleMetric">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;ServiceLevelMetric"/>
+                    <Class>
+                        <unionOf rdf:parseType="Collection">
+                            <Restriction>
+                                <onProperty rdf:resource="&icr;hasMetricValue"/>
+                                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                                <onDataRange rdf:resource="&xsd;decimal"/>
+                            </Restriction>
+                            <Restriction>
+                                <onProperty rdf:resource="&icr;hasMetricValueLessThan"/>
+                                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                                <onDataRange rdf:resource="&xsd;decimal"/>
+                            </Restriction>
+                            <Restriction>
+                                <onProperty rdf:resource="&icr;hasMetricValueMoreThan"/>
+                                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                                <onDataRange rdf:resource="&xsd;decimal"/>
+                            </Restriction>
+                        </unionOf>
+                    </Class>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;dependsOn"/>
+                        <someValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                                    <rdf:Description rdf:about="&icr;VirtualMachine"/>
+                                </unionOf>
+                            </Class>
+                        </someValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMetricName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMetricUnit"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceLowLevelMetricType -->
+
+    <Class rdf:about="&icr;ServiceLowLevelMetricType">
+        <rdfs:subClassOf rdf:resource="&icr;LowLevelMetricType"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceMetric -->
+
+    <Class rdf:about="&icr;ServiceMetric">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;dependsOn"/>
+                        <someValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                                    <rdf:Description rdf:about="&icr;VirtualMachine"/>
+                                </unionOf>
+                            </Class>
+                        </someValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;dependsOn"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                                    <rdf:Description rdf:about="&icr;VirtualMachine"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;atTime"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;dateTime"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMetricName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMetricUnit"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMetricValue"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ServiceMetricType -->
+
+    <Class rdf:about="&icr;ServiceMetricType">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&icr;hasMetricName"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&icr;hasMetricUnit"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#SharePointServer2013 -->
+
+    <Class rdf:about="&icr;SharePointServer2013">
+        <rdfs:subClassOf rdf:resource="&icr;WebApplicationServer"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#SharedStorageVolume -->
+
+    <Class rdf:about="&icr;SharedStorageVolume">
+        <rdfs:subClassOf rdf:resource="&icr;Storage"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Software -->
+
+    <Class rdf:about="&icr;Software"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#SqlServer -->
+
+    <Class rdf:about="&icr;SqlServer">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Storage -->
+
+    <Class rdf:about="&icr;Storage">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;PhysicalThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasDiskSize"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#StorageServer -->
+
+    <Class rdf:about="&icr;StorageServer">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#Subscriber -->
+
+    <Class rdf:about="&icr;Subscriber">
+        <rdfs:subClassOf rdf:resource="&icr;User"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#UnixOS -->
+
+    <Class rdf:about="&icr;UnixOS">
+        <rdfs:subClassOf rdf:resource="&icr;OperativeSystem"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#User -->
+
+    <Class rdf:about="&icr;User"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#VirtualMachine -->
+
+    <Class rdf:about="&icr;VirtualMachine">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;VirtualMachineTemplate"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorInfo"/>
+                        <allValuesFrom rdf:resource="&icr;MonitorInfo"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isPartOf"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;HostMachine"/>
+                                    <rdf:Description rdf:about="&icr;LocalNetwork"/>
+                                    <rdf:Description rdf:about="&icr;VirtualNetwork"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isInstanceOf"/>
+                        <onClass rdf:resource="&icr;VirtualMachineTemplate"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasAuthUserName"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasAuthUserPassword"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasExternalIPAddress"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMonitorState"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isInDomain"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#VirtualMachineTemplate -->
+
+    <Class rdf:about="&icr;VirtualMachineTemplate">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;VirtualThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <someValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                                </unionOf>
+                            </Class>
+                        </someValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasNetworkAdapter"/>
+                        <allValuesFrom rdf:resource="&icr;NetworkAdapter"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;IcaroApplication"/>
+                                    <rdf:Description rdf:about="&icr;IcaroService"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasVirtualStorage"/>
+                        <allValuesFrom rdf:resource="&icr;VirtualStorage"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isStoredOn"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;LocalStorage"/>
+                                    <rdf:Description rdf:about="&icr;SharedStorageVolume"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasVirtualStorage"/>
+                        <onClass rdf:resource="&icr;VirtualStorage"/>
+                        <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasOS"/>
+                        <onClass rdf:resource="&icr;OperativeSystem"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isStoredOn"/>
+                        <onClass>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;LocalStorage"/>
+                                    <rdf:Description rdf:about="&icr;SharedStorageVolume"/>
+                                </unionOf>
+                            </Class>
+                        </onClass>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCPUCount"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;int"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMemorySize"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCPUSpeedLimit"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasCPUSpeedReservation"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMemoryLimit"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasMemoryReservation"/>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#VirtualNetwork -->
+
+    <Class rdf:about="&icr;VirtualNetwork">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;VirtualThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasPart"/>
+                        <allValuesFrom rdf:resource="&icr;VirtualMachine"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#VirtualStorage -->
+
+    <Class rdf:about="&icr;VirtualStorage">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&icr;VirtualThing"/>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;isStoredOn"/>
+                        <onClass>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&icr;LocalStorage"/>
+                                    <rdf:Description rdf:about="&icr;SharedStorageVolume"/>
+                                </unionOf>
+                            </Class>
+                        </onClass>
+                        <maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</maxQualifiedCardinality>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasDiskSize"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;decimal"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasIdentifier"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="&icr;hasName"/>
+                        <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                        <onDataRange rdf:resource="&xsd;string"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#VirtualThing -->
+
+    <Class rdf:about="&icr;VirtualThing"/>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#WebApplicationServer -->
+
+    <Class rdf:about="&icr;WebApplicationServer">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#WebServer -->
+
+    <Class rdf:about="&icr;WebServer">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&icr;supportsLanguage"/>
+                <onClass rdf:resource="&icr;DevelopmentLanguage"/>
+                <minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</minQualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#WindowsDomainController -->
+
+    <Class rdf:about="&icr;WindowsDomainController">
+        <rdfs:subClassOf rdf:resource="&icr;IcaroService"/>
+    </Class>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#WindowsOS -->
+
+    <Class rdf:about="&icr;WindowsOS">
+        <rdfs:subClassOf rdf:resource="&icr;OperativeSystem"/>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#centos -->
+
+    <NamedIndividual rdf:about="&icr;centos">
+        <rdf:type rdf:resource="&icr;LinuxOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#citrix_xenserver -->
+
+    <NamedIndividual rdf:about="&icr;citrix_xenserver">
+        <rdf:type rdf:resource="&icr;Hypervisor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#csharp -->
+
+    <NamedIndividual rdf:about="&icr;csharp">
+        <rdf:type rdf:resource="&icr;DevelopmentLanguage"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ibm_as400 -->
+
+    <NamedIndividual rdf:about="&icr;ibm_as400">
+        <rdf:type rdf:resource="&icr;Hypervisor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#java -->
+
+    <NamedIndividual rdf:about="&icr;java">
+        <rdf:type rdf:resource="&icr;DevelopmentLanguage"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#kvm -->
+
+    <NamedIndividual rdf:about="&icr;kvm">
+        <rdf:type rdf:resource="&icr;Hypervisor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#microsoft_hyperv -->
+
+    <NamedIndividual rdf:about="&icr;microsoft_hyperv">
+        <rdf:type rdf:resource="&icr;Hypervisor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#oracle_vm -->
+
+    <NamedIndividual rdf:about="&icr;oracle_vm">
+        <rdf:type rdf:resource="&icr;Hypervisor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#os400 -->
+
+    <NamedIndividual rdf:about="&icr;os400">
+        <rdf:type rdf:resource="&icr;OtherOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#php -->
+
+    <NamedIndividual rdf:about="&icr;php">
+        <rdf:type rdf:resource="&icr;DevelopmentLanguage"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#redHat -->
+
+    <NamedIndividual rdf:about="&icr;redHat">
+        <rdf:type rdf:resource="&icr;LinuxOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ruby -->
+
+    <NamedIndividual rdf:about="&icr;ruby">
+        <rdf:type rdf:resource="&icr;DevelopmentLanguage"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#ubuntu -->
+
+    <NamedIndividual rdf:about="&icr;ubuntu">
+        <rdf:type rdf:resource="&icr;LinuxOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#vmware_esx -->
+
+    <NamedIndividual rdf:about="&icr;vmware_esx">
+        <rdf:type rdf:resource="&icr;Hypervisor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#vmware_esxi -->
+
+    <NamedIndividual rdf:about="&icr;vmware_esxi">
+        <rdf:type rdf:resource="&icr;Hypervisor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#windows7 -->
+
+    <NamedIndividual rdf:about="&icr;windows7">
+        <rdf:type rdf:resource="&icr;WindowsOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#windowsServer2003 -->
+
+    <NamedIndividual rdf:about="&icr;windowsServer2003">
+        <rdf:type rdf:resource="&icr;WindowsOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#windowsServer2008 -->
+
+    <NamedIndividual rdf:about="&icr;windowsServer2008">
+        <rdf:type rdf:resource="&icr;WindowsOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#windowsServer2012 -->
+
+    <NamedIndividual rdf:about="&icr;windowsServer2012">
+        <rdf:type rdf:resource="&icr;WindowsOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#windowsServer2012R2 -->
+
+    <NamedIndividual rdf:about="&icr;windowsServer2012R2">
+        <rdf:type rdf:resource="&icr;WindowsOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#windowsVista -->
+
+    <NamedIndividual rdf:about="&icr;windowsVista">
+        <rdf:type rdf:resource="&icr;WindowsOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.cloudicaro.it/cloud_ontology/core#windowsXP -->
+
+    <NamedIndividual rdf:about="&icr;windowsXP">
+        <rdf:type rdf:resource="&icr;WindowsOS"/>
+    </NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&icr;windows7"/>
+            <rdf:Description rdf:about="&icr;windowsServer2003"/>
+            <rdf:Description rdf:about="&icr;windowsVista"/>
+            <rdf:Description rdf:about="&icr;windowsXP"/>
+        </distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

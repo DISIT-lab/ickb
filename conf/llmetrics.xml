@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY icr "http://www.cloudicaro.it/cloud_ontology/core#">
+	<!ENTITY app "http://www.cloudicaro.it/cloud_ontology/applications#">
+]>
+<rdf:RDF xmlns:app="http://www.cloudicaro.it/cloud_ontology/applications#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:icr="http://www.cloudicaro.it/cloud_ontology/core#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns#
+schema-icaro-kb-metricType.xsd">
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG">
+		<rdf:type rdf:resource="&icr;CPULowLevelMetricType"/>
+		<icr:hasMetricName>CPU AVG</icr:hasMetricName>
+		<icr:hasDescription>average CPU</icr:hasDescription>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG_15min">
+		<rdf:type rdf:resource="&icr;CPULowLevelMetricType"/>
+		<icr:hasMetricName>CPU AVG 15min</icr:hasMetricName>
+		<icr:hasDescription>average CPU usage in the last 15 minutes</icr:hasDescription>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG_1min">
+		<rdf:type rdf:resource="&icr;CPULowLevelMetricType"/>
+		<icr:hasMetricName>CPU AVG 1min</icr:hasMetricName>
+		<icr:hasDescription>average CPU usage in the last 1 minute</icr:hasDescription>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG_5sec">
+		<rdf:type rdf:resource="&icr;CPULowLevelMetricType"/>
+		<icr:hasMetricName>CPU AVG 5sec</icr:hasMetricName>
+		<icr:hasDescription>average CPU usage in the last 5 seconds</icr:hasDescription>
+		<icr:hasMetricUnit>$</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:CPULowLevelMetricType:CPU_MHz">
+		<rdf:type rdf:resource="&icr;CPULowLevelMetricType"/>
+		<icr:hasMetricName>CPU MHz</icr:hasMetricName>
+		<icr:hasDescription>CPU MHz</icr:hasDescription>
+		<icr:hasMetricUnit>MHz</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:DiskLowLevelMetricType:Disk_Usage">
+		<rdf:type rdf:resource="&icr;DiskLowLevelMetricType"/>
+		<icr:hasMetricName>Disk Usage</icr:hasMetricName>
+		<icr:hasDescription>Total disk usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:DiskLowLevelMetricType:Host_Storage_Used">
+		<rdf:type rdf:resource="&icr;DiskLowLevelMetricType"/>
+		<icr:hasMetricName>Host Storage Used</icr:hasMetricName>
+		<icr:hasDescription>Storage of the host machine</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:OperativeSystemLowLevelMetric:Logged_Users">
+		<rdf:type rdf:resource="&icr;OperativeSystemLowLevelMetric"/>
+		<icr:hasMetricName>Logged Users</icr:hasMetricName>
+		<icr:hasDescription>NUmber of users logged on the OS</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic">
+		<rdf:type rdf:resource="&icr;NetworkLowLevelMetricType"/>
+		<icr:hasMetricName>Net Traffic</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic_In">
+		<rdf:type rdf:resource="&icr;NetworkLowLevelMetricType"/>
+		<icr:hasMetricName>Net Traffic In</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic_Out">
+		<rdf:type rdf:resource="&icr;NetworkLowLevelMetricType"/>
+		<icr:hasMetricName>Net Traffic Out</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MemoryLowLevelMetricType:Overall_Memory">
+		<rdf:type rdf:resource="&icr;MemoryLowLevelMetricType"/>
+		<icr:hasMetricName>Overall Memory</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MemoryLowLevelMetricType:Overhead_Memory">
+		<rdf:type rdf:resource="&icr;MemoryLowLevelMetricType"/>
+		<icr:hasMetricName>Overhead Memory</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MemoryLowLevelMetricType:Physical_Memory_Free">
+		<rdf:type rdf:resource="&icr;MemoryLowLevelMetricType"/>
+		<icr:hasMetricName>Physical Memory Free</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MemoryLowLevelMetricType:Physical_Memory_Used">
+		<rdf:type rdf:resource="&icr;MemoryLowLevelMetricType"/>
+		<icr:hasMetricName>Physical Memory Used</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:OperativeSystemLowLevelMetric:Processes">
+		<rdf:type rdf:resource="&icr;OperativeSystemLowLevelMetric"/>
+		<icr:hasMetricName>Processes</icr:hasMetricName>
+		<icr:hasDescription>Number of processes running on the OS</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MemoryLowLevelMetricType:Swap_Memory">
+		<rdf:type rdf:resource="&icr;MemoryLowLevelMetricType"/>
+		<icr:hasMetricName>Swap Memory</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MemoryLowLevelMetricType:Swap_Memory_Used">
+		<rdf:type rdf:resource="&icr;MemoryLowLevelMetricType"/>
+		<icr:hasMetricName>Swap Memory Used</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:OperativeSystemLowLevelMetric:System_Uptime">
+		<rdf:type rdf:resource="&icr;OperativeSystemLowLevelMetric"/>
+		<icr:hasMetricName>System Uptime</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:NetworkLowLevelMetricType:TCP_Connections">
+		<rdf:type rdf:resource="&icr;NetworkLowLevelMetricType"/>
+		<icr:hasMetricName>TCP Connections</icr:hasMetricName>
+		<icr:hasDescription>number of tcp connections</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:NetworkLowLevelMetricType:UDP_Datagram_In">
+		<rdf:type rdf:resource="&icr;NetworkLowLevelMetricType"/>
+		<icr:hasMetricName>UDP Datagram In</icr:hasMetricName>
+		<icr:hasDescription>number of incoming udp packets per second</icr:hasDescription>
+		<icr:hasMetricUnit>#/s</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:NetworkLowLevelMetricType:UDP_Datagram_Out">
+		<rdf:type rdf:resource="&icr;NetworkLowLevelMetricType"/>
+		<icr:hasMetricName>UDP Datagram Out</icr:hasMetricName>
+		<icr:hasDescription>number of outgoing udp packets per second</icr:hasDescription>
+		<icr:hasMetricUnit>#/s</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:NetworkLowLevelMetricType:VMWARE_Net_Traffic">
+		<rdf:type rdf:resource="&icr;NetworkLowLevelMetricType"/>
+		<icr:hasMetricName>VMWARE Net Traffic</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>KBps</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+	<icr:MachineLowLevelMetricType rdf:about="urn:cloudicaro:MemoryLowLevelMetricType:Virtual_Memory_Used">
+		<rdf:type rdf:resource="&icr;MemoryLowLevelMetricType"/>
+		<icr:hasMetricName>Virtual Memory Used</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+	</icr:MachineLowLevelMetricType>
+
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Process_memory_usage">
+		<icr:hasMetricName>Apache Process</icr:hasMetricName>
+        <icr:hasPerfData>memory usage</icr:hasPerfData>
+		<icr:hasDescription>Apache memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;ApacheWebServer"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Process_num_process">
+		<icr:hasMetricName>Apache Process</icr:hasMetricName>
+        <icr:hasPerfData>num process</icr:hasPerfData>
+		<icr:hasDescription>Apache num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;ApacheWebServer"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Tomcat_Process_memory_usage">
+		<icr:hasMetricName>Apache Tomcat Process</icr:hasMetricName>
+        <icr:hasPerfData>memory usage</icr:hasPerfData>
+		<icr:hasDescription>Tomcat memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;ApacheTomcat"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Tomcat_Process_num_process">
+		<icr:hasMetricName>Apache Tomcat Process</icr:hasMetricName>
+        <icr:hasPerfData>num process</icr:hasPerfData>
+		<icr:hasDescription>Tomcat num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;ApacheTomcat"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:AxcpGridNode_Check_Alive_time">
+		<icr:hasMetricName>AxcpGridNode Check Alive</icr:hasMetricName>
+        <icr:hasPerfData>time</icr:hasPerfData>
+		<icr:hasDescription>Response time of AxcpGridNode for a tcp connection</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;AxcpGridNode"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:AxcpGridNode_Process_memory_usage">
+		<icr:hasMetricName>AxcpGridNode Process</icr:hasMetricName>
+        <icr:hasPerfData>memory usage</icr:hasPerfData>
+		<icr:hasDescription>AXCP Grid Node memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;AxcpGridNode"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:AxcpGridNode_Process_num_process">
+		<icr:hasMetricName>AxcpGridNode Process</icr:hasMetricName>
+        <icr:hasPerfData>num process</icr:hasPerfData>
+		<icr:hasDescription>AXCP Grid Node num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;AxcpGridNode"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:AxcpScheduler_Check_Alive_time">
+		<icr:hasMetricName>AxcpScheduler Check Alive</icr:hasMetricName>
+        <icr:hasPerfData>time</icr:hasPerfData>
+		<icr:hasDescription>Response time of AxcpScheduler for a tcp connection</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;AxcpScheduler"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:AxcpScheduler_Process_memory_usage">
+		<icr:hasMetricName>AxcpScheduler Process</icr:hasMetricName>
+        <icr:hasPerfData>memory usage</icr:hasPerfData>
+		<icr:hasDescription>AXCP Scheduler memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;AxcpScheduler"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:AxcpScheduler_Process_num_process">
+		<icr:hasMetricName>AxcpScheduler Process</icr:hasMetricName>
+        <icr:hasPerfData>num process</icr:hasPerfData>
+		<icr:hasDescription>AXCP Scheduler num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;AxcpScheduler"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Check_Apache_Http_time">
+		<icr:hasMetricName>Check Apache Http</icr:hasMetricName>
+        <icr:hasPerfData>time</icr:hasPerfData>
+		<icr:hasDescription>Response time of Apache for a tcp connection on port 80</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;ApacheWebServer"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Check_Apache_Tomcat_Http_time">
+		<icr:hasMetricName>Check Apache Tomcat Http</icr:hasMetricName>
+        <icr:hasPerfData>time</icr:hasPerfData>
+		<icr:hasDescription>Response time of Apache Tomcat for a TCP connection on port 8080</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;ApacheTomcat"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Check_IIS_Http_time">
+		<icr:hasMetricName>Check IIS Http</icr:hasMetricName>
+        <icr:hasPerfData>time</icr:hasPerfData>
+		<icr:hasDescription>Response time of IIS for a TCP connection on port 80</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;InternetInformationServer"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:Check_MySQL_Http_time">
+		<icr:hasMetricName>Check MySQL Http</icr:hasMetricName>
+        <icr:hasPerfData>time</icr:hasPerfData>
+		<icr:hasDescription>Response time of MySQL for a tcp connection on port 3306</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;MySQL"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:IIS_Process_memory_usage">
+		<icr:hasMetricName>IIS Process</icr:hasMetricName>
+        <icr:hasPerfData>memory usage</icr:hasPerfData>
+		<icr:hasDescription>IIS memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;InternetInformationServer"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:IIS_Process_num_process">
+		<icr:hasMetricName>IIS Process</icr:hasMetricName>
+        <icr:hasPerfData>num process</icr:hasPerfData>
+		<icr:hasDescription>IIS num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;InternetInformationServer"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Connections_Status">
+		<icr:hasMetricName>MySql Connections Status</icr:hasMetricName>
+		<icr:hasDescription>Number of connections to the database</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;MySQL"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Connections_Time">
+		<icr:hasMetricName>MySql Connections Time</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;MySQL"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:MySql_DB_Size">
+		<icr:hasMetricName>MySql DB Size</icr:hasMetricName>
+		<icr:hasDescription>Size of all the databases on the machine</icr:hasDescription>
+		<icr:hasMetricUnit>GB</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;MySQL"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Open_Files">
+		<icr:hasMetricName>MySql Open Files</icr:hasMetricName>
+		<icr:hasDescription>number of files open from mysql</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;MySQL"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Process_memory_usage">
+		<icr:hasMetricName>MySql Process</icr:hasMetricName>
+        <icr:hasPerfData>memory usage</icr:hasPerfData>
+		<icr:hasDescription>MySql memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;MySQL"/>
+	</icr:ServiceLowLevelMetricType>
+	<icr:ServiceLowLevelMetricType rdf:about="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Process_num_process">
+		<icr:hasMetricName>MySql Process</icr:hasMetricName>
+        <icr:hasPerfData>num process</icr:hasPerfData>
+		<icr:hasDescription>MySql num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:onServiceType rdf:resource="&icr;MySQL"/>
+	</icr:ServiceLowLevelMetricType>
+</rdf:RDF>
+

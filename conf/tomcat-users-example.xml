@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcat-users>
+    <role rolename="ICAROKB_READ"/>
+    <role rolename="ICAROKB_READWRITE"/>
+    <user password="icaro" roles="ICAROKB_READ" username="kb-read"/>
+    <user password="icaro" roles="ICAROKB_READWRITE" username="kb-write"/>
+    
+    <role rolename="manager"/>
+    <user password="tomcat" roles="manager,admin" username="tomcat"/>
+</tomcat-users>

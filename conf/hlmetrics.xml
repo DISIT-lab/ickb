@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY icr "http://www.cloudicaro.it/cloud_ontology/core#">
+	<!ENTITY app "http://www.cloudicaro.it/cloud_ontology/applications#">
+]>
+<rdf:RDF xmlns:app="http://www.cloudicaro.it/cloud_ontology/applications#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:icr="http://www.cloudicaro.it/cloud_ontology/core#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns#
+schema-icaro-kb-metricType.xsd">
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:LAST_CPU_AVG">
+		<icr:hasMetricName>LAST CPU AVG</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG"/>
+        <icr:useOperator>last</icr:useOperator>
+        <icr:useMultiValueOp>avg</icr:useMultiValueOp>
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:LAST_Disk_Usage">
+		<icr:hasMetricName>LAST Disk Usage</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:DiskLowLevelMetricType:Disk_Usage"/>
+        <icr:useOperator>last</icr:useOperator>
+        <icr:useMultiValueOp>sum</icr:useMultiValueOp>
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:LAST_Network_Traffic">
+		<icr:hasMetricName>LAST Network Traffic</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic"/>
+        <icr:useOperator>last</icr:useOperator>
+        <icr:useMultiValueOp>sum</icr:useMultiValueOp>
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:LAST_Memory_Used">
+		<icr:hasMetricName>LAST Memory Used</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Physical_Memory_Used"/>
+        <icr:useOperator>last</icr:useOperator>
+        <icr:useMultiValueOp>sum</icr:useMultiValueOp>
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:CPU_AVG_30min">
+		<icr:hasMetricName>CPU AVG 30min</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG"/>
+        <icr:useOperator>avg</icr:useOperator>
+        <icr:useMultiValueOp>avg</icr:useMultiValueOp>
+        <icr:useTimeInterval rdf:parseType="Resource">
+          <icr:hasValue rdf:datatype="&xsd;decimal">30</icr:hasValue>
+          <icr:hasUnit>min</icr:hasUnit>
+        </icr:useTimeInterval>        
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:Disk_Usage_AVG_30min">
+		<icr:hasMetricName>Disk Usage AVG 30min</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:DiskLowLevelMetricType:Disk_Usage"/>
+        <icr:useOperator>avg</icr:useOperator>
+        <icr:useMultiValueOp>sum</icr:useMultiValueOp>
+        <icr:useTimeInterval rdf:parseType="Resource">
+          <icr:hasValue rdf:datatype="&xsd;decimal">30</icr:hasValue>
+          <icr:hasUnit>min</icr:hasUnit>
+        </icr:useTimeInterval>        
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:Network_Traffic_AVG_30min">
+		<icr:hasMetricName>Network Traffic AVG 30min</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic"/>
+        <icr:useOperator>avg</icr:useOperator>
+        <icr:useMultiValueOp>sum</icr:useMultiValueOp>
+        <icr:useTimeInterval rdf:parseType="Resource">
+          <icr:hasValue rdf:datatype="&xsd;decimal">30</icr:hasValue>
+          <icr:hasUnit>min</icr:hasUnit>
+        </icr:useTimeInterval>        
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetricType:Memory_Used_AVG_30min">
+		<icr:hasMetricName>Memory Used AVG 30min</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+      <icr:MetricMeasure>
+        <icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Physical_Memory_Used"/>
+        <icr:useOperator>avg</icr:useOperator>
+        <icr:useMultiValueOp>sum</icr:useMultiValueOp>
+        <icr:useTimeInterval rdf:parseType="Resource">
+          <icr:hasValue rdf:datatype="&xsd;decimal">30</icr:hasValue>
+          <icr:hasUnit>min</icr:hasUnit>
+        </icr:useTimeInterval>        
+      </icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_CPU_AVG_15min">
+		<icr:hasMetricName>LAST CPU AVG 15min</icr:hasMetricName>
+		<icr:hasDescription>average CPU usage in the last 15 minutes</icr:hasDescription>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG_15min"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_CPU_AVG_1min">
+		<icr:hasMetricName>LAST CPU AVG 1min</icr:hasMetricName>
+		<icr:hasDescription>average CPU usage in the last 1 minute</icr:hasDescription>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG_1min"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_CPU_AVG_5sec">
+		<icr:hasMetricName>LAST CPU AVG 5sec</icr:hasMetricName>
+		<icr:hasDescription>average CPU usage in the last 5 seconds</icr:hasDescription>
+		<icr:hasMetricUnit>$</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:CPULowLevelMetricType:CPU_AVG_5sec"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_CPU_MHz">
+		<icr:hasMetricName>LAST CPU MHz</icr:hasMetricName>
+		<icr:hasDescription>CPU MHz</icr:hasDescription>
+		<icr:hasMetricUnit>MHz</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:CPULowLevelMetricType:CPU_MHz"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Host_Storage_Used">
+		<icr:hasMetricName>LAST Host Storage Used</icr:hasMetricName>
+		<icr:hasDescription>Storage of the host machine</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:DiskLowLevelMetricType:Host_Storage_Used"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Logged_Users">
+		<icr:hasMetricName>LAST Logged Users</icr:hasMetricName>
+		<icr:hasDescription>NUmber of users logged on the OS</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:OperativeSystemLowLevelMetric:Logged_Users"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Net_Traffic">
+		<icr:hasMetricName>LAST Net Traffic</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Net_Traffic_In">
+		<icr:hasMetricName>LAST Net Traffic In</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic_In"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Net_Traffic_Out">
+		<icr:hasMetricName>LAST Net Traffic Out</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>bps</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:Net_Traffic_Out"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Overall_Memory">
+		<icr:hasMetricName>LAST Overall Memory</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Overall_Memory"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Overhead_Memory">
+		<icr:hasMetricName>LAST Overhead Memory</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Overhead_Memory"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Physical_Memory_Free">
+		<icr:hasMetricName>LAST Physical Memory Free</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Physical_Memory_Free"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Physical_Memory_Used">
+		<icr:hasMetricName>LAST Physical Memory Used</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Physical_Memory_Used"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Processes">
+		<icr:hasMetricName>LAST Processes</icr:hasMetricName>
+		<icr:hasDescription>Number of processes running on the OS</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:OperativeSystemLowLevelMetric:Processes"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Swap_Memory">
+		<icr:hasMetricName>LAST Swap Memory</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Swap_Memory"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Swap_Memory_Used">
+		<icr:hasMetricName>LAST Swap Memory Used</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Swap_Memory_Used"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_System_Uptime">
+		<icr:hasMetricName>LAST System Uptime</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:OperativeSystemLowLevelMetric:System_Uptime"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_TCP_Connections">
+		<icr:hasMetricName>LAST TCP Connections</icr:hasMetricName>
+		<icr:hasDescription>number of tcp connections</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:TCP_Connections"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_UDP_Datagram_In">
+		<icr:hasMetricName>LAST UDP Datagram In</icr:hasMetricName>
+		<icr:hasDescription>number of incoming udp packets per second</icr:hasDescription>
+		<icr:hasMetricUnit>#/s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:UDP_Datagram_In"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_UDP_Datagram_Out">
+		<icr:hasMetricName>LAST UDP Datagram Out</icr:hasMetricName>
+		<icr:hasDescription>number of outgoing udp packets per second</icr:hasDescription>
+		<icr:hasMetricUnit>#/s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:UDP_Datagram_Out"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_VMWARE_Net_Traffic">
+		<icr:hasMetricName>LAST VMWARE Net Traffic</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>KBps</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:NetworkLowLevelMetricType:VMWARE_Net_Traffic"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+	<icr:MachineHighLevelMetricType rdf:about="urn:cloudicaro:MachineHighLevelMetric:LAST_Virtual_Memory_Used">
+		<icr:hasMetricName>LAST Virtual Memory Used</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:MemoryLowLevelMetricType:Virtual_Memory_Used"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>       
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:MachineHighLevelMetricType>  
+
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Apache_Process_memory_usage">
+		<icr:hasMetricName>LAST Apache Process memory usage</icr:hasMetricName>
+		<icr:hasDescription>Apache memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Process_memory_usage"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Apache_Process_num_process">
+		<icr:hasMetricName>LAST Apache Process num process</icr:hasMetricName>
+		<icr:hasDescription>Apache num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Process_num_process"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Apache_Tomcat_Process_memory_usage">
+		<icr:hasMetricName>LAST Apache Tomcat Process memory usage</icr:hasMetricName>
+		<icr:hasDescription>Tomcat memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Tomcat_Process_memory_usage"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Apache_Tomcat_Process_num_process">
+		<icr:hasMetricName>LAST Apache Tomcat Process num process</icr:hasMetricName>
+		<icr:hasDescription>Tomcat num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Apache_Tomcat_Process_num_process"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_AxcpGridNode_Check_Alive_time">
+		<icr:hasMetricName>LAST AxcpGridNode Check Alive time</icr:hasMetricName>
+		<icr:hasDescription>Response time of AxcpGridNode for a tcp connection</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:AxcpGridNode_Check_Alive_time"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_AxcpGridNode_Process_memory_usage">
+		<icr:hasMetricName>LAST AxcpGridNode Process memory usage</icr:hasMetricName>
+		<icr:hasDescription>AXCP Grid Node memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:AxcpGridNode_Process_memory_usage"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_AxcpGridNode_Process_num_process">
+		<icr:hasMetricName>LAST AxcpGridNode Process num process</icr:hasMetricName>
+		<icr:hasDescription>AXCP Grid Node num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:AxcpGridNode_Process_num_process"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_AxcpScheduler_Check_Alive_time">
+		<icr:hasMetricName>LAST AxcpScheduler Check Alive time</icr:hasMetricName>
+		<icr:hasDescription>Response time of AxcpScheduler for a tcp connection</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:AxcpScheduler_Check_Alive_time"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_AxcpScheduler_Process_memory_usage">
+		<icr:hasMetricName>LAST AxcpScheduler Process memory usage</icr:hasMetricName>
+		<icr:hasDescription>AXCP Scheduler memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:AxcpScheduler_Process_memory_usage"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_AxcpScheduler_Process_num_process">
+		<icr:hasMetricName>LAST AxcpScheduler Process num process</icr:hasMetricName>
+		<icr:hasDescription>AXCP Scheduler num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:AxcpScheduler_Process_num_process"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Check_Apache_Http_time">
+		<icr:hasMetricName>LAST Check Apache Http time</icr:hasMetricName>
+		<icr:hasDescription>Response time of Apache for a tcp connection on port 80</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Check_Apache_Http_time"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Check_Apache_Tomcat_Http_time">
+		<icr:hasMetricName>LAST Check Apache Tomcat Http time</icr:hasMetricName>
+		<icr:hasDescription>Response time of Apache Tomcat for a TCP connection on port 8080</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Check_Apache_Tomcat_Http_time"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Check_IIS_Http_time">
+		<icr:hasMetricName>LAST Check IIS Http time</icr:hasMetricName>
+		<icr:hasDescription>Response time of IIS for a TCP connection on port 80</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Check_IIS_Http_time"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_Check_MySQL_Http_time">
+		<icr:hasMetricName>LAST Check MySQL Http time</icr:hasMetricName>
+		<icr:hasDescription>Response time of MySQL for a tcp connection on port 3306</icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:Check_MySQL_Http_time"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_IIS_Process_memory_usage">
+		<icr:hasMetricName>LAST IIS Process memory usage</icr:hasMetricName>
+		<icr:hasDescription>IIS memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:IIS_Process_memory_usage"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_IIS_Process_num_process">
+		<icr:hasMetricName>LAST IIS Process num process</icr:hasMetricName>
+		<icr:hasDescription>IIS num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:IIS_Process_num_process"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_MySql_Connections_Status">
+		<icr:hasMetricName>LAST MySql Connections Status</icr:hasMetricName>
+		<icr:hasDescription>Number of connections to the database</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Connections_Status"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_MySql_Connections_Time">
+		<icr:hasMetricName>LAST MySql Connections Time</icr:hasMetricName>
+		<icr:hasDescription></icr:hasDescription>
+		<icr:hasMetricUnit>s</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Connections_Time"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_MySql_DB_Size">
+		<icr:hasMetricName>LAST MySql DB Size</icr:hasMetricName>
+		<icr:hasDescription>Size of all the databases on the machine</icr:hasDescription>
+		<icr:hasMetricUnit>GB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:MySql_DB_Size"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_MySql_Open_Files">
+		<icr:hasMetricName>LAST MySql Open Files</icr:hasMetricName>
+		<icr:hasDescription>number of files open from mysql</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Open_Files"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_MySql_Process_memory_usage">
+		<icr:hasMetricName>LAST MySql Process memory usage</icr:hasMetricName>
+		<icr:hasDescription>MySql memory usage</icr:hasDescription>
+		<icr:hasMetricUnit>MB</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Process_memory_usage"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+	<icr:ServiceHighLevelMetricType rdf:about="urn:cloudicaro:ServiceHighLevelMetric:LAST_MySql_Process_num_process">
+		<icr:hasMetricName>LAST MySql Process num process</icr:hasMetricName>
+		<icr:hasDescription>MySql num processes</icr:hasDescription>
+		<icr:hasMetricUnit>#</icr:hasMetricUnit>
+		<icr:forGroup>%URN%</icr:forGroup>
+		<icr:hasExpression>
+			<icr:MetricMeasure>
+				<icr:onLowLevelMetricType rdf:resource="urn:cloudicaro:ServiceLowLevelMetricType:MySql_Process_num_process"/>
+				<icr:useOperator>last</icr:useOperator>
+				<icr:useMultiValueOp>avg</icr:useMultiValueOp>
+			</icr:MetricMeasure>
+		</icr:hasExpression>
+	</icr:ServiceHighLevelMetricType>  
+</rdf:RDF>
+

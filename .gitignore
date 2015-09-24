@@ -1,11 +1,21 @@
+cfg-gen/*
+owlim/*
+schema/*
+IcaroKB/test/*
+IcaroKB/nbproject/private/*
+conf/cgi/*
+conf/owlim*
+ontology/old/*
+
+*.svn
 *.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
-*.jar
-*.war
+#*.jar
+#*.war
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
