@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY icr "http://www.cloudicaro.it/cloud_ontology/core#">
+    <!ENTITY app "http://www.cloudicaro.it/cloud_ontology/applications#">
+]>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:icr="http://www.cloudicaro.it/cloud_ontology/core#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/02/22-rdf-syntax-ns#
+schema-icaro-kb-dataCenter.xsd">
+    <icr:DataCenter rdf:about="urn:cloudicaro:DataCenter:01">
+        <icr:hasName>data center ICARO</icr:hasName>
+        <icr:hasIdentifier>dc01</icr:hasIdentifier>
+        <icr:hasPart rdf:resource="urn:cloudicaro:HostMachine:001"/>
+    </icr:DataCenter>
+    <icr:HostMachine rdf:about="urn:cloudicaro:HostMachine:001">
+        <icr:hasName>host1</icr:hasName>
+        <icr:hasIdentifier>host01</icr:hasIdentifier>
+        <icr:hasCPUCount rdf:datatype="&xsd;positiveInteger">8</icr:hasCPUCount>
+        <icr:hasMemorySize rdf:datatype="&xsd;decimal">16</icr:hasMemorySize>
+        <icr:hasDiskSize rdf:datatype="&xsd;decimal">1000</icr:hasDiskSize>
+        <icr:hasDiskSize rdf:datatype="&xsd;decimal">500</icr:hasDiskSize>
+        <icr:hasNetworkAdapter>
+            <icr:NetworkAdapter>
+                <icr:hasIPAddress>192.168.1.124</icr:hasIPAddress>
+                <icr:boundToNetwork rdf:resource="urn:cloudicaro:LocalNetwork:001"/>
+            </icr:NetworkAdapter>
+            <icr:NetworkAdapter>
+                <icr:hasIPAddress>192.168.0.125</icr:hasIPAddress>
+                <icr:boundToNetwork rdf:resource="urn:cloudicaro:LocalNetwork:002"/>
+            </icr:NetworkAdapter>
+        </icr:hasNetworkAdapter>
+        <icr:hasOS rdf:resource="http://www.cloudicaro.it/cloud_ontology/core#linux"/>
+        <icr:isPartOf rdf:resource="urn:cloudicaro:DataCenter:01"/>
+        <icr:isInDomain>DC01</icr:isInDomain>
+        <icr:hasAuthUserName>root</icr:hasAuthUserName>
+        <icr:hasAuthUserPassword>xxx</icr:hasAuthUserPassword>
+        <icr:hasMonitorInfo>
+            <icr:MonitorInfo>
+                <icr:hasMetricName>avgCPU%1m</icr:hasMetricName>
+                <icr:hasWarningValue rdf:datatype="&xsd;decimal">70</icr:hasWarningValue>
+                <icr:hasCriticalValue rdf:datatype="&xsd;decimal">80</icr:hasCriticalValue>
+                <icr:hasMaxCheckAttempts rdf:datatype="&xsd;positiveInteger">5</icr:hasMaxCheckAttempts>
+                <icr:hasCheckInterval rdf:datatype="&xsd;positiveInteger">3</icr:hasCheckInterval>
+            </icr:MonitorInfo>
+        </icr:hasMonitorInfo>
+    </icr:HostMachine>
+    <icr:LocalNetwork rdf:about="urn:cloudicaro:LocalNetwork:001">
+        <icr:hasName>LAN interna</icr:hasName>
+        <icr:hasIdentifier>LAN001</icr:hasIdentifier>        
+    </icr:LocalNetwork>
+    <icr:LocalNetwork rdf:about="urn:cloudicaro:LocalNetwork:002">
+        <icr:hasName>LAN esterna</icr:hasName>
+        <icr:hasIdentifier>LAN002</icr:hasIdentifier>        
+    </icr:LocalNetwork>
+</rdf:RDF>
